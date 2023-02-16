@@ -1,0 +1,17 @@
+@mixin links(){
+    a {
+        @include link-a();
+
+        @media (hover: hover) {
+            &:hover,&:focus{
+                @include link-a-interaction();
+            }
+        }
+    }
+}
+
+@mixin links-color($_color-a) {
+    a {
+        @include link-a-color($_color-a: $_color-a);
+    }
+}

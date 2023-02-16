@@ -1,0 +1,40 @@
+@mixin block-image() {
+    figure.wp-block-image{
+        display: block;
+        width: fit-content;
+        margin: 0 0 $measure*3;
+        img{
+            margin: 0;
+            display: block;
+        }
+        figcaption{
+            @include make-font-o();
+            text-align: right;
+            margin-top: $measure * 2;
+        }
+    }
+    div.wp-block-image{
+        margin: 0;
+        figure{
+            margin-top: 0;
+            margin-bottom: $measure*3;
+            img{
+                margin: 0;
+                display: block;
+            }
+            figcaption{
+                @include make-font-o();
+                text-align: right;
+                margin-top: $measure * 2;
+            }
+        }
+    }
+}
+
+@mixin block-image-color($_color-a) {
+    figure{
+        figcaption{
+            color: $_color-a;
+        }
+    }
+}

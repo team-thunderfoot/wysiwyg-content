@@ -1,0 +1,24 @@
+@mixin paragraphs() {
+  p {
+    @include make-font-l();
+    margin-bottom: $measure * 4;
+    &:has(
+      + ul,
+      + ol
+    ){
+      margin-bottom: $measure * 3; //* margin if the next element is ul or ol
+    }
+  }
+  em {
+    font-style: italic;
+  }
+  strong {
+    font-weight: bold;
+  }
+}
+
+@mixin paragraphs-color($_color-a) {
+  p {
+    color: $_color-a;
+  }
+}

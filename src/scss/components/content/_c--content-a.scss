@@ -1,0 +1,75 @@
+// @import "./../../_mixins/content/content-block-btn";
+// @import "./../../_mixins/content/content-block-footnote";
+// @import "./../../_mixins/content/content-block-highlighted.scss";
+// @import "./../../_mixins/content/content-block-image.scss";
+// @import "./../../_mixins/content/content-block-quote.scss";
+// @import "./../../_mixins/content/content-block-separator.scss";
+// @import "./../../_mixins/content/content-block-table.scss";
+// @import "./../../_mixins/content/content-heading.scss";
+// @import "./../../_mixins/content/content-links.scss";
+// @import "./../../_mixins/content/content-list.scss";
+// @import "./../../_mixins/content/content-paragraph.scss";
+@import "./../../_mixins/content/content-utilities.scss";
+
+.c--content-a {
+    @include utilities();
+    // @include headings();
+    // @include headings-color(
+    //     $_color-a: map-get($color-options, a)
+    // );
+    // @include lists();
+    // @include lists-color(
+    //     $_color-a: map-get($color-options, a),
+    //     $_color-b: map-get($color-options, e)
+    // );
+    // @include paragraphs();
+    // @include paragraphs-color(
+    //     $_color-a: map-get($color-options, a)
+    // );
+    // @include links();
+    // @include links-color(
+    //     $_color-a: map-get($color-options, e)
+    // );
+    // @include block-quote();
+    // @include block-quote-color(
+    //     $_color-a: map-get($color-options, a),
+    //     $_border-color-a: map-get($color-options, e)
+    // );
+    // @include block-image();
+    // @include block-image-color(
+    //     $_color-a: map-get($color-options, a)
+    // );
+    // @include block-table();
+    // @include block-table-color(
+    //     $_border-color-a: map-get($color-options, a), //* first row border
+    //     $_border-color-b: transparent, //* other rows border
+    //     $_background-a: map-get($color-options, a), //* first row background
+    //     $_background-b: map-get($color-options, d), //* even rows background
+    //     $_background-c: map-get($color-options, c), //* odd rows background (except the first one)
+    //     $_color-a: map-get($color-options, d), //* first row text color
+    //     $_color-b: map-get($color-options, b), //* other rows text color
+    //     $_color-c: map-get($color-options, b) //* caption text color
+    // );
+    // @include block-separator();
+    // @include block-separator-color(
+    //     $_border-color-a: map-get($color-options, e),
+    // );
+    // @include block-highlighted();
+    // @include block-highlighted-color(
+    //     $_color-a: map-get($color-options, a)
+    // );
+    // @include block-footnote();
+    // @include block-footnote-color(
+    //     $_color-a: map-get($color-options, a)
+    // );
+    // @include block-btn();
+    // @include block-btn-color(
+    //     $_color-a: map-get($color-options, b),
+    //     $_color-b: map-get($color-options, c),
+    //     $_border-color-a: map-get($color-options, b),
+    //     $_background-a: map-get($color-options, b)
+    // );
+    // *:last-child {
+    //     margin-bottom: 0px;
+    // }
+}

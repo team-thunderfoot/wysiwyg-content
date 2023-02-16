@@ -1,0 +1,12 @@
+@mixin utilities(){
+    *.alignleft{
+        float: left;
+    }
+    *.alignright{
+        float: right;
+    }
+    *.aligncenter{
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

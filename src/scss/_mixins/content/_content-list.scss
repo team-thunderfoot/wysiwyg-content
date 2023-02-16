@@ -1,0 +1,94 @@
+@mixin lists() {
+  ul,
+  ol {
+    list-style: none;
+    margin-bottom: $measure * 4; //* list margin
+    li {
+      margin-bottom: $measure; //* list items margin
+      @include make-font-l();
+    }
+  }
+  ul {
+    li {
+      position: relative;
+      padding-left: calc(#{$measure*2} + #{$measure*.75}); //* space between dot and text + dot width
+      &:before {
+        content: "";
+        width: $measure*.75;
+        height: $measure*.75;
+        border-radius: 50%;
+        position: absolute;
+        top: $measure;
+        left: 0;
+      }
+      //* Nested ul
+      ul{
+        margin-top: $measure;
+      }
+    }
+  }
+  ol {
+    counter-reset: item;
+    li{
+      position: relative;
+      padding-left: calc(#{$measure*2} + #{$measure*1.5}); //* space between number and text + number width
+      &::before{
+        content: counters(item, ".") ".";
+        counter-increment: item;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      //* Nested ol
+      ol{
+        margin-top: $measure;
+        li{
+          padding-left: calc(#{$measure*2} + #{$measure*3}); //* space between number and text + number width
+          ol{
+            li{
+              padding-left: calc(#{$measure*2} + #{$measure*4.5}); //* space between number and text + number width
+              ol{
+                li{
+                  padding-left: calc(#{$measure*2} + #{$measure*6}); //* space between number and text + number width
+                  ol{
+                    li{
+                      padding-left: calc(#{$measure*2} + #{$measure*7.5}); //* space between number and text + number width
+                      ol{
+                        li{
+                          padding-left: calc(#{$measure*2} + #{$measure*9}); //* space between number and text + number width
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin lists-color($_color-a, $_color-b) {
+  ul,
+  ol {
+    li {
+      color: $_color-a;
+    }
+  }
+  ul {
+    li {
+      &:before {
+        background-color: $_color-b;
+      }
+    }
+  }
+  ol {
+    li {
+      &:before {
+        color: $_color-b;
+      }
+    }
+  }
+}
