@@ -28,6 +28,14 @@ Import content mixins at the beginning of the c--content stylesheet
 @import "@teamthunderfoot/wysiwyg-content/src/scss/_mixins.scss";
 ```
 
+Your HTML structure should look like this
+
+```sh
+<div id="c--content-a">
+  <?= apply_filters('the_content',get_the_content()) ?>
+</div>
+```
+
 Copy c--content styles and change parameters with the ones we want
 ```sh
 .c--content-a {
@@ -342,6 +350,37 @@ With the links-modifier mixin, you can add a modifier class to the link, you can
 
 ### lists
 
+Styles the default wordpress blocks.
+
+#### Editable variables
+
+- $text-font
+- $one-number-width
+- $first-level-dot-width
+- $first-level-dot-top
+- $second-level-dot-width: false by default
+- $second-level-dot-top: false by default
+- $third-level-dot-width: false by default
+- $third-level-dot-top: false by default
+- $text-font-weight: false by default
+
+#### Editable variables for Modifiers
+
+- $text-color
+- $number-color
+- $first-level-dot-image: false by default
+- $first-level-dot-background: false by default
+- $first-level-dot-border-width: false by default
+- $first-level-dot-border-color: false by default
+- $second-level-dot-image: false by default
+- $second-level-dot-background: false by default
+- $second-level-dot-border-width: false by default
+- $second-level-dot-border-color: false by default
+- $third-level-dot-image: false by default
+- $third-level-dot-background: false by default
+- $third-level-dot-border-width: false by default
+- $third-level-dot-border-color: false by default
+
 
 ### paragraphs
 
@@ -358,3 +397,5 @@ Styles the default wordpress block.
 
 
 ### utilities
+
+Here are the classes Wordpress uses to align blocks left/right/center
