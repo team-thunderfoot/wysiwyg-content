@@ -1,4 +1,6 @@
-@mixin block-btn($btn-class){
+@mixin block-btn(
+    $btn-class
+) {
     .wp-block-buttons,
     .wp-block-button{
         margin-bottom: $measure*4;
@@ -8,7 +10,9 @@
     } 
 }
 
-@mixin block-btn-modifier($btn-class-modifier) {
+@mixin block-btn-modifier(
+    $btn-class-modifier
+) {
     .wp-block-button{
         .wp-block-button__link{
             @extend .#{$btn-class-modifier} !optional;

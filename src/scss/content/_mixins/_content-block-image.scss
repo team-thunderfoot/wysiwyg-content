@@ -56,7 +56,9 @@
     }
 }
 
-@mixin block-image-modifier($caption-color) {
+@mixin block-image-modifier(
+    $caption-color
+) {
     figure{
         figcaption{
             color: $caption-color;

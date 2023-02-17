@@ -7,7 +7,10 @@
     } 
 }
 
-@mixin block-separator-modifier($separator-width, $separator-color) {
+@mixin block-separator-modifier(
+    $separator-width,
+    $separator-color
+) {
     .wp-block-separator{
         border-bottom: $separator-width solid $separator-color;
     } 

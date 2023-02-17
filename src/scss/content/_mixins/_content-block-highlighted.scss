@@ -12,7 +12,9 @@
     }
 }
 
-@mixin block-highlighted-modifier($text-color) {
+@mixin block-highlighted-modifier(
+    $text-color
+) {
     .highlighted{
         color: $text-color;
     }

@@ -11,7 +11,9 @@
     }
 }
 
-@mixin block-footnote-modifier($text-color) {
+@mixin block-footnote-modifier(
+    $text-color
+) {
     .footnote{
         color: $text-color;
     }
