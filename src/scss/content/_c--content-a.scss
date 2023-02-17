@@ -1,16 +1,3 @@
-@import "./_mixins/content-block-btn";
-@import "./_mixins/content-block-footnote";
-@import "./_mixins/content-block-highlighted.scss";
-@import "./_mixins/content-block-image.scss";
-@import "./_mixins/content-block-quote.scss";
-@import "./_mixins/content-block-separator.scss";
-@import "./_mixins/content-block-table.scss";
-@import "./_mixins/content-heading.scss";
-@import "./_mixins/content-links.scss";
-@import "./_mixins/content-list.scss";
-@import "./_mixins/content-paragraph.scss";
-@import "./_mixins/content-utilities.scss";
-
 .c--content-a {
     @include block-btn(
         $btn-class: g--btn-01

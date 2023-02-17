@@ -16,7 +16,6 @@
                 font-weight: $quote-font-weight;
             }
             font-style: $quote-font-style;
-            margin-bottom: $measure * 3;
         }
         cite{
             @extend .f--font-#{$cite-font} !optional;
@@ -24,6 +23,7 @@
                 font-weight: $cite-font-weight;
             }
             font-style: $cite-font-style;
+            margin-top: $measure * 3;
         }
     }
 }
