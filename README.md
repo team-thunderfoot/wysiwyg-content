@@ -151,3 +151,11 @@ Import content mixins at the beginning of the c--content stylesheet
     }
 }
 ```
+
+ Your HTML structure should look like this
+
+```sh
+<div id="c--content-a">
+  <?= apply_filters('the_content',get_the_content()) ?>
+</div>
+```
