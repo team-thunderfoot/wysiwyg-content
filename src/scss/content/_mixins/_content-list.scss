@@ -29,7 +29,6 @@
         content: "";
         width: $first-level-dot-width;
         height: $first-level-dot-width;
-        border-radius: 50%;
         position: absolute;
         top: $first-level-dot-top;
         left: 0;
@@ -120,12 +119,15 @@
 @mixin lists-modifier(
   $text-color,
   $number-color,
+  $first-level-dot-image: false,
   $first-level-dot-background: false,
   $first-level-dot-border-width: false,
   $first-level-dot-border-color: false,
+  $second-level-dot-image: false,
   $second-level-dot-background: false,
   $second-level-dot-border-width: false,
   $second-level-dot-border-color: false,
+  $third-level-dot-image: false,
   $third-level-dot-background: false,
   $third-level-dot-border-width: false,
   $third-level-dot-border-color: false,
@@ -139,35 +141,65 @@
   ul {
     li {
       &:before {
-        @if $first-level-dot-background {
-          background-color: $first-level-dot-background;
-        }
-        @if $first-level-dot-border-width and $first-level-dot-border-color{
-          border: $first-level-dot-border-width solid $first-level-dot-border-color;
+        @if $first-level-dot-image{
+          border-radius: 0;
+          background: url(#{$first-level-dot-image});
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: center;
+        } @else {
+          @if $first-level-dot-background {
+            border-radius: 50%;
+            background: $first-level-dot-background;
+          }
+          @if $first-level-dot-border-width and $first-level-dot-border-color{
+            border-radius: 50%;
+            border: $first-level-dot-border-width solid $first-level-dot-border-color;
+          }
         }
       }
       ul {
         li {
           &:before {
-            @if $second-level-dot-background {
-              background-color: $second-level-dot-background;
-              border: none;
-            }
-            @if $second-level-dot-border-width and $second-level-dot-border-color{
-              background-color: transparent;
-              border: $second-level-dot-border-width solid $second-level-dot-border-color;
+            @if $second-level-dot-image{
+              border-radius: 0;
+              background: url(#{$second-level-dot-image});
+              background-repeat: no-repeat;
+              background-size: contain;
+              background-position: center;
+            } @else {
+              @if $second-level-dot-background {
+                border-radius: 50%;
+                background: $second-level-dot-background;
+                border: none;
+              }
+              @if $second-level-dot-border-width and $second-level-dot-border-color{
+                border-radius: 50%;
+                background: transparent;
+                border: $second-level-dot-border-width solid $second-level-dot-border-color;
+              }
             }
           }
           ul {
             li {
               &:before {
-                @if $third-level-dot-background {
-                  background-color: $third-level-dot-background;
-                  border: none;
-                }
-                @if $third-level-dot-border-width and $third-level-dot-border-color{
-                  background-color: transparent;
-                  border: $third-level-dot-border-width solid $third-level-dot-border-color;
+                @if $third-level-dot-image{
+                  border-radius: 0;
+                  background: url(#{$third-level-dot-image});
+                  background-repeat: no-repeat;
+                  background-size: contain;
+                  background-position: center;
+                } @else {
+                  @if $third-level-dot-background {
+                    border-radius: 50%;
+                    background: $third-level-dot-background;
+                    border: none;
+                  }
+                  @if $third-level-dot-border-width and $third-level-dot-border-color{
+                    border-radius: 50%;
+                    background: transparent;
+                    border: $third-level-dot-border-width solid $third-level-dot-border-color;
+                  }
                 }
               }
             }
