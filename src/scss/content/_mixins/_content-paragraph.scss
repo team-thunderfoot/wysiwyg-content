@@ -1,6 +1,12 @@
-@mixin paragraphs() {
+@mixin paragraphs(
+  $text-font,
+  $text-font-weight: false,
+) {
   p {
-    @include make-font-l();
+    @extend .f--font-#{$text-font} !optional;
+    @if $text-font-weight {
+      font-weight: $text-font-weight;
+    }
     margin-bottom: $measure * 4;
     &:has(
       + ul,
@@ -17,8 +23,10 @@
   }
 }
 
-@mixin paragraphs-color($_color-a) {
+@mixin paragraphs-modifier(
+  $text-color
+) {
   p {
-    color: $_color-a;
+    color: $text-color;
   }
 }

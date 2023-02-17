@@ -1,0 +1,77 @@
+@mixin headings(
+    $h2-font,
+    $h3-font,
+    $h4-font,
+    $h5-font,
+    $h6-font,
+    $h2-font-weight: false,
+    $h3-font-weight: false,
+    $h4-font-weight: false,
+    $h5-font-weight: false,
+    $h6-font-weight: false,
+){
+    h2{
+        @extend .f--font-#{$h2-font} !optional;
+        @if $h2-font-weight {
+            font-weight: $h2-font-weight;
+        }
+        padding-top: $measure;
+        margin-bottom: $measure*4;
+    }
+    h3{ 
+        @extend .f--font-#{$h3-font} !optional;
+        @if $h3-font-weight {
+            font-weight: $h3-font-weight;
+        }
+        padding-top: $measure;
+        margin-bottom: $measure*4; 
+        font-weight: 600;
+    }
+    h4{ 
+        @extend .f--font-#{$h4-font} !optional;
+        @if $h4-font-weight {
+            font-weight: $h4-font-weight;
+        }
+        padding-top: $measure;
+        margin-bottom: $measure*3;
+    }
+    h5 {
+        @extend .f--font-#{$h5-font} !optional;
+        @if $h5-font-weight {
+            font-weight: $h5-font-weight;
+        }
+        padding-top: $measure;
+        margin-bottom: $measure*3;
+    }
+    h6 {
+        @extend .f--font-#{$h6-font} !optional;
+        @if $h6-font-weight {
+            font-weight: $h6-font-weight;
+        }
+        opacity: 0.7;
+    }
+}
+
+@mixin headings-modifier(
+    $h2-color,
+    $h3-color,
+    $h4-color,
+    $h5-color,
+    $h6-color,
+) {
+    h2{   
+        color: $h2-color;
+    }
+    h3{   
+        color: $h3-color;
+    }
+    h4{   
+        color: $h4-color;
+    }
+    h5{   
+        color: $h5-color;
+    }
+    h6{   
+        color: $h6-color;
+    }
+}

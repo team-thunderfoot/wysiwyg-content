@@ -1,0 +1,96 @@
+@mixin block-table(
+    $first-row-font,
+    $other-rows-font,
+    $caption-font,
+    $first-row-font-weight: false,
+    $other-rows-font-weight: false,
+    $caption-font-weight: false,
+){
+    .wp-block-table{
+        margin-bottom: $measure*4;
+        table,
+        table.wp-block-table {
+            width: 100%;
+            text-align: left;
+            margin: 0;
+            border: none;
+            padding: 0px;
+        }
+        table thead,
+        table tfoot,
+        table.wp-block-table thead,
+        table.wp-block-table tfoot {
+            border: none;
+            border: none;
+        }
+        table tbody:first-child tr:first-child { //* first row
+            td {
+                padding: $measure * 2;
+                @extend .f--font-#{$first-row-font} !optional;
+                @if $first-row-font-weight {
+                    font-weight: $first-row-font-weight;
+                }
+            }
+        }
+        table td,
+        table.wp-block-table td { //* all rows
+            @extend .f--font-#{$other-rows-font} !optional;
+            @if $other-rows-font-weight {
+                font-weight: $other-rows-font-weight;
+            }
+            padding: $measure $measure * 2;
+            margin: 0px;
+        }
+        figcaption{
+            @extend .f--font-#{$caption-font} !optional;
+            @if $caption-font-weight {
+                font-weight: $caption-font-weight;
+            }
+            margin-top: $measure*2;
+            text-align: right;
+        }
+    }
+}
+@mixin block-table-modifier(
+    $first-row-border-width,
+    $first-row-border-color,
+    $other-rows-border-width,
+    $other-rows-border-color,
+    $first-row-background,
+    $even-rows-background,
+    $odd-rows-background,
+    $first-row-text-color,
+    $other-rows-text-color,
+    $caption-color
+){
+
+    .wp-block-table{
+        table tbody:first-child tr:first-child {
+            td {
+                border: $first-row-border-width solid $first-row-border-color;
+            }
+        }
+        table tbody tr {
+            background: $even-rows-background;
+            td{
+                color: $other-rows-text-color;
+            }
+        }
+        table tbody tr:nth-child(odd) {
+            background: $odd-rows-background;
+        }
+        table tbody:first-child tr:first-child {
+            background: $first-row-background;
+            td {
+                color: $first-row-text-color;
+            }
+        }
+        table td,
+        table.wp-block-table td {
+            border: $other-rows-border-width solid $other-rows-border-color;
+        }
+        figcaption{
+            color: $caption-color;
+        }
+    }
+}

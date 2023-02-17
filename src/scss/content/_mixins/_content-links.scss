@@ -1,0 +1,15 @@
+@mixin links(
+    $link-class
+){
+    a {
+        @extend .#{$link-class} !optional;
+    }
+}
+
+@mixin links-modifier(
+    $link-class-modifier
+) {
+    a {
+        @extend .#{$link-class-modifier} !optional;
+    }
+}

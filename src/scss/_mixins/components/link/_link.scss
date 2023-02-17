@@ -1,0 +1,16 @@
+@mixin make-link-01() {
+    text-decoration: underline;
+    @media (hover: hover) {
+        &:hover ,
+        &:focus ,
+        &:active {
+            text-decoration: none;
+        }
+    }
+}
+
+@mixin make-link-01-modifier(
+    $text-color,
+) {
+    color: $text-color;
+}

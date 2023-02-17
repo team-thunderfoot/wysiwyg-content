@@ -1,0 +1,14 @@
+@mixin block-separator(){
+    .wp-block-separator{
+        width: 100%;
+        display: block;
+        margin: $measure * 4 0;
+        border: none;
+    } 
+}
+
+@mixin block-separator-modifier($separator-width, $separator-color) {
+    .wp-block-separator{
+        border-bottom: $separator-width solid $separator-color;
+    } 
+}

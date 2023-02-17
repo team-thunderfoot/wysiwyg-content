@@ -1,4 +1,8 @@
-@mixin block-image() {
+@mixin block-image(
+    $caption-font,
+    $caption-font-weight: false,
+    $img-border-radius: false,
+) {
     figure.wp-block-image{
         display: block;
         width: fit-content;
@@ -6,9 +10,15 @@
         img{
             margin: 0;
             display: block;
+            @if $img-border-radius {
+                border-radius: $img-border-radius
+            }
         }
         figcaption{
-            @include make-font-o();
+            @extend .f--font-#{$caption-font} !optional;
+            @if $caption-font-weight {
+                font-weight: $caption-font-weight;
+            }
             text-align: right;
             margin-top: $measure * 2;
         }
@@ -23,7 +33,10 @@
                 display: block;
             }
             figcaption{
-                @include make-font-o();
+                @extend .f--font-#{$caption-font} !optional;
+                @if $caption-font-weight {
+                    font-weight: $caption-font-weight;
+                }
                 text-align: right;
                 margin-top: $measure * 2;
             }
@@ -31,10 +44,10 @@
     }
 }
 
-@mixin block-image-color($_color-a) {
+@mixin block-image-modifier($caption-color) {
     figure{
         figcaption{
-            color: $_color-a;
+            color: $caption-color;
         }
     }
 }

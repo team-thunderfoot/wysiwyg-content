@@ -1,0 +1,48 @@
+@mixin block-quote(
+    $quote-font,
+    $quote-font-style,
+    $cite-font,
+    $cite-font-style,
+    $quote-font-weight: false,
+    $cite-font-weight: false,
+){
+    .wp-block-quote, blockquote {
+        padding: $measure * 3 0;
+        margin-top: $measure;
+        margin-bottom: $measure * 4;
+        p{
+            @extend .f--font-#{$quote-font} !optional;
+            @if $quote-font-weight {
+                font-weight: $quote-font-weight;
+            }
+            font-style: $quote-font-style;
+            margin-bottom: $measure * 3;
+        }
+        cite{
+            @extend .f--font-#{$cite-font} !optional;
+            @if $cite-font-weight {
+                font-weight: $cite-font-weight;
+            }
+            font-style: $cite-font-style;
+        }
+    }
+}
+
+@mixin block-quote-modifier(
+    $quote-color,
+    $cite-color,
+    $border-color,
+    $border-width,
+) {
+    .wp-block-quote, blockquote {
+        border-top: $border-width solid $border-color; 
+        border-bottom: $border-width solid $border-color;
+
+        p{
+            color: $quote-color;
+        }
+        cite{
+            color: $cite-color;
+        }
+    }
+}

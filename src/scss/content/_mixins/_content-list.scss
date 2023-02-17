@@ -1,0 +1,186 @@
+@mixin lists(
+  $text-font,
+  $one-number-width,
+  $first-level-dot-width,
+  $first-level-dot-top,
+  $second-level-dot-width:false,
+  $second-level-dot-top:false,
+  $third-level-dot-width:false,
+  $third-level-dot-top:false,
+  $text-font-weight: false,
+) {
+  ul,
+  ol {
+    list-style: none;
+    margin-bottom: $measure * 4; //* list margin
+    li {
+      margin-bottom: $measure; //* list items margin
+      @extend .f--font-#{$text-font} !optional;
+      @if $text-font-weight {
+        font-weight: $text-font-weight;
+      }
+    }
+  }
+  ul {
+    li {
+      position: relative;
+      padding-left: calc(#{$measure*2} + #{$first-level-dot-width}); //* space between dot and text + dot width
+      &:before {
+        content: "";
+        width: $first-level-dot-width;
+        height: $first-level-dot-width;
+        border-radius: 50%;
+        position: absolute;
+        top: $first-level-dot-top;
+        left: 0;
+      }
+      //* Nested ul
+      ul{
+        margin-top: $measure;
+        @if $second-level-dot-width or $second-level-dot-top or $third-level-dot-width or $third-level-dot-top {
+          li{
+            @if $second-level-dot-width{
+              padding-left: calc(#{$measure*2} + #{$second-level-dot-width}); //* space between dot and text + dot width
+              &::before{
+                width: $second-level-dot-width;
+                height: $second-level-dot-width;
+              }
+            }
+            @if $second-level-dot-top{
+              &::before{
+                top: $second-level-dot-top;
+              }
+            }
+            @if $third-level-dot-width or $third-level-dot-top{
+              ul{
+                li{
+                  @if $third-level-dot-width{
+                    padding-left: calc(#{$measure*2} + #{$third-level-dot-width}); //* space between dot and text + dot width
+                    &::before{
+                      width: $third-level-dot-width;
+                      height: $third-level-dot-width;
+                    }
+                  }
+                  @if $third-level-dot-top{
+                    &::before{
+                      top: $third-level-dot-top;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  ol {
+    counter-reset: item;
+    li{
+      position: relative;
+      padding-left: calc(#{$measure*2} + #{$one-number-width}); //* space between number and text + number width
+      &::before{
+        content: counters(item, ".") ".";
+        counter-increment: item;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      //* Nested ol
+      ol{
+        margin-top: $measure;
+        li{
+          padding-left: calc(#{$measure*2} + #{$one-number-width*2}); //* space between number and text + number width
+          ol{
+            li{
+              padding-left: calc(#{$measure*2} + #{$one-number-width*3}); //* space between number and text + number width
+              ol{
+                li{
+                  padding-left: calc(#{$measure*2} + #{$one-number-width*4}); //* space between number and text + number width
+                  ol{
+                    li{
+                      padding-left: calc(#{$measure*2} + #{$one-number-width*5}); //* space between number and text + number width
+                      ol{
+                        li{
+                          padding-left: calc(#{$measure*2} + #{$one-number-width*6}); //* space between number and text + number width
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin lists-modifier(
+  $text-color,
+  $number-color,
+  $first-level-dot-background: false,
+  $first-level-dot-border-width: false,
+  $first-level-dot-border-color: false,
+  $second-level-dot-background: false,
+  $second-level-dot-border-width: false,
+  $second-level-dot-border-color: false,
+  $third-level-dot-background: false,
+  $third-level-dot-border-width: false,
+  $third-level-dot-border-color: false,
+) {
+  ul,
+  ol {
+    li {
+      color: $text-color;
+    }
+  }
+  ul {
+    li {
+      &:before {
+        @if $first-level-dot-background {
+          background-color: $first-level-dot-background;
+        }
+        @if $first-level-dot-border-width and $first-level-dot-border-color{
+          border: $first-level-dot-border-width solid $first-level-dot-border-color;
+        }
+      }
+      ul {
+        li {
+          &:before {
+            @if $second-level-dot-background {
+              background-color: $second-level-dot-background;
+              border: none;
+            }
+            @if $second-level-dot-border-width and $second-level-dot-border-color{
+              background-color: transparent;
+              border: $second-level-dot-border-width solid $second-level-dot-border-color;
+            }
+          }
+          ul {
+            li {
+              &:before {
+                @if $third-level-dot-background {
+                  background-color: $third-level-dot-background;
+                  border: none;
+                }
+                @if $third-level-dot-border-width and $third-level-dot-border-color{
+                  background-color: transparent;
+                  border: $third-level-dot-border-width solid $third-level-dot-border-color;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  ol {
+    li {
+      &:before {
+        color: $number-color;
+      }
+    }
+  }
+}

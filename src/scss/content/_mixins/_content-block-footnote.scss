@@ -1,0 +1,18 @@
+@mixin block-footnote(
+    $text-font,
+    $text-font-weight: false,
+){
+    .footnote{
+        margin-bottom: $measure * 2;
+        @extend .f--font-#{$text-font} !optional;
+        @if $text-font-weight {
+            font-weight: $text-font-weight;
+        }
+    }
+}
+
+@mixin block-footnote-modifier($text-color) {
+    .footnote{
+        color: $text-color;
+    }
+}
