@@ -143,29 +143,32 @@ Copy c--content styles and change parameters with the ones we want
     @include lists(
         $text-font: d,
         $one-number-width: 22px,
-        $first-level-dot-width: $measure,
-        $first-level-dot-top: 13px,
-        // $second-level-dot-width: default,
-        // $second-level-dot-top: default,
-        // $third-level-dot-width: default,
-        // $third-level-dot-top:default,
+        $first-level-artwork-width: $measure,
+        $first-level-artwork-top: 13px,
+        // $second-level-artwork-width: default,
+        // $second-level-artwork-top: default,
+        // $third-level-artwork-width: default,
+        // $third-level-artwork-top:default,
         // $text-font-weight: default,
     );
     @include lists-modifier(
         $text-color: map-get($color-options, a),
         $number-color: map-get($color-options, f),
-        // $first-level-dot-image: default,
-        // $first-level-dot-background: default,
-        // $first-level-dot-border-width: default,
-        // $first-level-dot-border-color: default,
-        // $second-level-dot-image: default,
-        // $second-level-dot-background: default,
-        // $second-level-dot-border-width: default,
-        // $second-level-dot-border-color: default,
-        // $third-level-dot-image: default,
-        // $third-level-dot-background: default,
-        // $third-level-dot-border-width: default,
-        // $third-level-dot-border-color: default,
+        // $first-level-artwork-image: default,
+        // $first-level-artwork-border-radius: false,
+        // $first-level-artwork-background: default,
+        // $first-level-artwork-border-width: default,
+        // $first-level-artwork-border-color: default,
+        // $second-level-artwork-image: default,
+        // $second-level-artwork-border-radius: false,
+        // $second-level-artwork-background: default,
+        // $second-level-artwork-border-width: default,
+        // $second-level-artwork-border-color: default,
+        // $third-level-artwork-image: default,
+        // $third-level-artwork-border-radius: false,
+        // $third-level-artwork-background: default,
+        // $third-level-artwork-border-width: default,
+        // $third-level-artwork-border-color: default,
     );
 
     @include paragraphs(
@@ -196,6 +199,7 @@ With the block-btn-modifier mixin, you can add a modifier class to the btn, you 
 #### Editable variables
 
 - $btn-class
+- $btn-class-modifier
 
 #### Editable variables for Modifiers
 
@@ -210,6 +214,7 @@ This is a custom block.
 
 - $text-font
 - $text-font-weight: false by default
+- $text-color
 
 #### Editable variables for Modifiers
 
@@ -223,6 +228,7 @@ This is a custom block.
 
 - $text-font
 - $text-font-weight: false by default
+- $text-color
 
 #### Editable variables for Modifiers
 
@@ -238,6 +244,7 @@ Styles the default wordpress block.
 - $caption-font
 - $caption-font-weight: false by default
 - $img-border-radius: false by default
+- $caption-color
 
 #### Editable variables for Modifiers
 
@@ -256,6 +263,10 @@ Styles the default wordpress block.
 - $cite-font-style
 - $quote-font-weight: false by default
 - $cite-font-weight: false by default
+- $quote-color
+- $cite-color
+- $border-color
+- $border-width
 
 #### Editable variables for Modifiers
 
@@ -271,7 +282,8 @@ Styles the default wordpress block.
 
 #### Editable variables
 
-It doesn't have default editable variables
+- $separator-width
+- $separator-color
 
 #### Editable variables for Modifiers
 
@@ -291,6 +303,16 @@ Styles the default wordpress block.
 - $first-row-font-weight: false by default
 - $other-rows-font-weight: false by default
 - $caption-font-weight: false by default
+- $first-row-border-width
+- $first-row-border-color
+- $other-rows-border-width
+- $other-rows-border-color
+- $first-row-background
+- $even-rows-background
+- $odd-rows-background
+- $first-row-text-color
+- $other-rows-text-color
+- $caption-color
 
 #### Editable variables for Modifiers
 
@@ -322,6 +344,11 @@ Styles the default wordpress blocks.
 - $h4-font-weight: false by default
 - $h5-font-weight: false by default
 - $h6-font-weight: false by default
+- $h2-color
+- $h3-color
+- $h4-color
+- $h5-color
+- $h6-color
 
 #### Editable variables for Modifiers
 
@@ -342,6 +369,7 @@ With the links-modifier mixin, you can add a modifier class to the link, you can
 #### Editable variables
 
 - $link-class
+- $link-class-modifier
 
 #### Editable variables for Modifiers
 
@@ -351,35 +379,57 @@ With the links-modifier mixin, you can add a modifier class to the link, you can
 ### lists
 
 Styles the default wordpress blocks.
+Unordered list artworks can be circles, squares or images, it depends on the variables we add ($X-artwork-X). If they're circles or squares they can be filled or just bordered.
+Variables named $second-level-artwork-X or $third-level-artwork-X should only be added in case we want a different value for them than for the other levels.
 
 #### Editable variables
 
 - $text-font
 - $one-number-width
-- $first-level-dot-width
-- $first-level-dot-top
-- $second-level-dot-width: false by default
-- $second-level-dot-top: false by default
-- $third-level-dot-width: false by default
-- $third-level-dot-top: false by default
+- $first-level-artwork-width
+- $first-level-artwork-top
+- $second-level-artwork-width: false by default
+- $second-level-artwork-top: false by default
+- $third-level-artwork-width: false by default
+- $third-level-artwork-top: false by default
 - $text-font-weight: false by default
+- $text-color
+- $number-color
+- $first-level-artwork-image: false by default
+- $first-level-artwork-border-radius: false by default
+- $first-level-artwork-background: false by default
+- $first-level-artwork-border-width: false by default
+- $first-level-artwork-border-color: false by default
+- $second-level-artwork-image: false by default
+- $second-level-artwork-border-radius: false by default
+- $second-level-artwork-background: false by default
+- $second-level-artwork-border-width: false by default
+- $second-level-artwork-border-color: false by default
+- $third-level-artwork-image: false by default
+- $third-level-artwork-border-radius: false by default
+- $third-level-artwork-background: false by default
+- $third-level-artwork-border-width: false by default
+- $third-level-artwork-border-color: false by default
 
 #### Editable variables for Modifiers
 
 - $text-color
 - $number-color
-- $first-level-dot-image: false by default
-- $first-level-dot-background: false by default
-- $first-level-dot-border-width: false by default
-- $first-level-dot-border-color: false by default
-- $second-level-dot-image: false by default
-- $second-level-dot-background: false by default
-- $second-level-dot-border-width: false by default
-- $second-level-dot-border-color: false by default
-- $third-level-dot-image: false by default
-- $third-level-dot-background: false by default
-- $third-level-dot-border-width: false by default
-- $third-level-dot-border-color: false by default
+- $first-level-artwork-image
+- $first-level-artwork-border-radius
+- $first-level-artwork-background
+- $first-level-artwork-border-width
+- $first-level-artwork-border-color
+- $second-level-artwork-image
+- $second-level-artwork-border-radius
+- $second-level-artwork-background
+- $second-level-artwork-border-width
+- $second-level-artwork-border-color
+- $third-level-artwork-image
+- $third-level-artwork-border-radius
+- $third-level-artwork-background
+- $third-level-artwork-border-width
+- $third-level-artwork-border-color
 
 
 ### paragraphs
@@ -390,6 +440,7 @@ Styles the default wordpress block.
 
 - $text-font
 - $text-font-weight: false by default
+- $text-color
 
 #### Editable variables for Modifiers
 
