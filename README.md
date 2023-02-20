@@ -142,7 +142,7 @@ Copy c--content styles and change parameters with the ones we want
 
     @include lists(
         $text-font: d,
-        $one-number-width: 22px,
+        $first-number-width: 22px,
         $first-level-artwork-width: $measure,
         $first-level-artwork-top: 13px,
         // $second-level-artwork-width: default,
@@ -385,7 +385,7 @@ Variables named $second-level-artwork-X or $third-level-artwork-X should only be
 #### Editable variables
 
 - $text-font
-- $one-number-width
+- $first-number-width
 - $first-level-artwork-width
 - $first-level-artwork-top
 - $second-level-artwork-width: false by default
