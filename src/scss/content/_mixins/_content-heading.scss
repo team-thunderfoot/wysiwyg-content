@@ -48,7 +48,7 @@
         @if $h6-font-weight {
             font-weight: $h6-font-weight;
         }
-        opacity: 0.7;
+        margin-bottom: $measure*2;
     }
 }
 
