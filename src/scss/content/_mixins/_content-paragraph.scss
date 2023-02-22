@@ -16,10 +16,12 @@
       margin-bottom: $measure * 3; //* margin if the next element is ul or ol
     }
   }
-  em {
+  em,
+  * em {
     font-style: italic;
   }
-  strong {
+  strong,
+  * strong {
     font-weight: $bold-font-weight;
   }
 }

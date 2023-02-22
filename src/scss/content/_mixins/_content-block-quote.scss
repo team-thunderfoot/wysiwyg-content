@@ -18,6 +18,7 @@
             font-style: $quote-font-style;
         }
         cite{
+            display: block;
             @extend .f--font-#{$cite-font} !optional;
             @if $cite-font-weight {
                 font-weight: $cite-font-weight;
