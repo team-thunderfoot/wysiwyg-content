@@ -2,7 +2,7 @@
     $text-font,
     $text-font-weight: false,
 ){
-    .highlighted{
+    & > .highlighted{
         margin-bottom: $measure * 4;
         padding-top: 0;
         @extend .f--font-#{$text-font} !optional;

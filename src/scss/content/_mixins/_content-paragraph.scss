@@ -3,7 +3,7 @@
   $bold-font-weight,
   $text-font-weight: false,
 ) {
-  p {
+  & > p {
     @extend .f--font-#{$text-font} !optional;
     @if $text-font-weight {
       font-weight: $text-font-weight;
@@ -16,12 +16,10 @@
       margin-bottom: $measure * 3; //* margin if the next element is ul or ol
     }
   }
-  em,
-  * em {
+  em {
     font-style: italic;
   }
-  strong,
-  * strong {
+  strong {
     font-weight: $bold-font-weight;
   }
 }
@@ -29,7 +27,7 @@
 @mixin paragraphs-modifier(
   $text-color
 ) {
-  p {
+  & > p {
     color: $text-color;
   }
 }

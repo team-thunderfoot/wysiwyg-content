@@ -1,8 +1,7 @@
 @mixin links(
     $link-class
 ){
-    a,
-    * a {
+    a {
         @extend .#{$link-class} !optional;
     }
 }
@@ -10,8 +9,7 @@
 @mixin links-modifier(
     $link-class-modifier
 ) {
-    a,
-    * a {
+    a {
         @extend .#{$link-class-modifier} !optional;
     }
 }
