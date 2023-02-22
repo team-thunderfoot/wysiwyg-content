@@ -123,6 +123,7 @@
     );
     @include paragraphs(
         $text-font: f,
+        $bold-font-weight: 600,
         // $text-font-weight: false,
     );
     @include paragraphs-modifier(

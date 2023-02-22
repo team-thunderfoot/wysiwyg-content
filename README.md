@@ -173,6 +173,7 @@ Copy c--content styles and change parameters with the ones we want
 
     @include paragraphs(
         $text-font: d,
+        $bold-font-weight: 600,
         // $text-font-weight: default,
     );
     @include paragraphs-modifier(
@@ -438,6 +439,7 @@ Styles the default wordpress block.
 
 #### Editable variables
 
+- $bold-font-weight
 - $text-font
 - $text-font-weight: false by default
 - $text-color
