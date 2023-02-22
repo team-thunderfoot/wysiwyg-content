@@ -1,5 +1,6 @@
 @mixin paragraphs(
   $text-font,
+  $bold-font-weight,
   $text-font-weight: false,
 ) {
   p {
@@ -19,7 +20,7 @@
     font-style: italic;
   }
   strong {
-    font-weight: bold;
+    font-weight: $bold-font-weight;
   }
 }
 
