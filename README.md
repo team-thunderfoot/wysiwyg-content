@@ -195,7 +195,7 @@ All blocks except utilities have 2 mixins, one for styles and the other one for 
 Styles the default wordpress block.
 With the block-btn mixin, you can choose an existing class for the btn.
 With the block-btn-modifier mixin, you can add a modifier class to the btn, you can add this mixin or not.
-* All classes you add here must exist and be included in the entry before the c--content stylesheet
+> Note: All classes you add here must exist and be included in the entry before the c--content stylesheet
 
 #### Editable variables
 
@@ -369,7 +369,7 @@ Styles the default wordpress blocks.
 Styles the default wordpress block.
 With the links mixin, you can choose an existing class for the link.
 With the links-modifier mixin, you can add a modifier class to the link, you can add this mixin or not.
-* All classes you add here must exist and be included in the entry before the c--content stylesheet
+> Note: All classes you add here must exist and be included in the entry before the c--content stylesheet
 
 #### Editable variables
 
