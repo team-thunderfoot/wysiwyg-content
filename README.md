@@ -2,18 +2,18 @@
 
 ## Stylized blocks
 
-- block-btn
-- block-footnote
-- block-highlighted (highlighted paragraph)
-- block-image
-- block-quote
-- block-separator
-- block-table
-- headings
-- links
-- lists
-- paragraphs
-- utilities
+- block-btn(#block-btn)
+- block-footnote(#block-footnote)
+- block-highlighted(#block-highlighted) (highlighted paragraph)
+- block-image(#block-image)
+- block-quote(#block-quote)
+- block-separator(#block-separator)
+- block-table(#block-table)
+- headings(#headings)
+- links(#links)
+- lists(#lists)
+- paragraphs(#paragraphs)
+- utilities(#utilities)
 
 
 ## Use
