@@ -296,7 +296,9 @@ Styles the default wordpress block.
 
 Styles the default wordpress block.
 
-![table] (https://raw.githubusercontent.com/team-thunderfoot/wysiwyg-content/main/src/img/table.png)
+![alt text][table]
+
+[table]: https://raw.githubusercontent.com/team-thunderfoot/wysiwyg-content/main/src/img/table.png
 
 #### Editable variables
 
