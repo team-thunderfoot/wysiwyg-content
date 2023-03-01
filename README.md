@@ -30,14 +30,14 @@ Import content mixins at the beginning of the c--content stylesheet
 
 Your HTML structure should look like this
 
-```sh
+```html
 <div id="c--content-a">
   <?= apply_filters('the_content',get_the_content()) ?>
 </div>
 ```
 
 Copy c--content styles and change parameters with the ones we want
-```sh
+```scss
 .c--content-a {
     @include block-btn(
         $btn-class: g--btn-01
