@@ -24,13 +24,13 @@ npm i @teamthunderfoot/wysiwyg-content
 ```
 
 Import content mixins at the beginning of the c--content stylesheet
-```sh
+```scss
 @import "@teamthunderfoot/wysiwyg-content/src/scss/_mixins.scss";
 ```
 
 Your HTML structure should look like this
 
-```html
+```php
 <div id="c--content-a">
   <?= apply_filters('the_content',get_the_content()) ?>
 </div>
