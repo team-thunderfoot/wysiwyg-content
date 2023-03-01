@@ -385,7 +385,29 @@ With the links-modifier mixin, you can add a modifier class to the link, you can
 
 Styles the default wordpress blocks.
 Unordered list artworks can be circles, squares or images, it depends on the variables we add ($X-artwork-X). If they're circles or squares they can be filled or just bordered.
-Variables named $second-level-artwork-X or $third-level-artwork-X should only be added in case we want a different value for them than for the other levels.
+> Note: Variables named $second-level-artwork-X or $third-level-artwork-X should only be added in case we want a different value for them than for the other levels.
+
+#### Variables needed for circles:
+
+- $first-level-artwork-width
+- $first-level-artwork-top
+- $first-level-artwork-border-radius
+- $first-level-artwork-background (if its filled)
+- $first-level-artwork-border-width and $first-level-artwork-border-color (if its bordered)
+
+#### Variables needed for squares:
+
+- $first-level-artwork-width
+- $first-level-artwork-top
+- $first-level-artwork-background (if its filled)
+- $first-level-artwork-border-width and $first-level-artwork-border-color (if its bordered)
+
+#### Variables needed for images:
+
+- $first-level-artwork-width
+- $first-level-artwork-top
+- $first-level-artwork-image
+
 
 #### Editable variables
 
