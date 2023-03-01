@@ -15,178 +15,7 @@
 - [paragraphs](#paragraphs)
 - [utilities](#utilities)
 
-
-## Use
-
-Install package
-```sh
-npm i @teamthunderfoot/wysiwyg-content
-```
-
-Import content mixins at the beginning of the c--content stylesheet
-```scss
-@import "@teamthunderfoot/wysiwyg-content/src/scss/_mixins.scss";
-```
-
-Your HTML structure should look like this
-
-```php
-<div id="c--content-a">
-  <?= apply_filters('the_content',get_the_content()) ?>
-</div>
-```
-
-Copy c--content styles and change parameters with the ones we want
-```scss
-.c--content-a {
-    @include block-btn(
-        $btn-class: g--btn-01
-    );
-    // @include block-btn-modifier(
-    //     $btn-class-modifier: g--btn-01--second
-    // );
-
-    @include block-footnote(
-        $text-font: e,
-        // $text-font-weight: default,
-    );
-    @include block-footnote-modifier(
-        $text-color: map-get($color-options, a)
-    );
-
-    @include block-highlighted(
-        $text-font: c,
-        // $text-font-weight: default,
-    );
-    @include block-highlighted-modifier(
-        $text-color: map-get($color-options, a)
-    );
-
-    @include block-image(
-        $caption-font: g,
-        // $caption-font-weight: default,
-        // $img-border-radius: default
-    );
-    @include block-image-modifier(
-        $caption-color: map-get($color-options, a)
-    );
-
-    @include block-quote(
-        $quote-font: d,
-        $quote-font-style: italic,
-        $cite-font: e,
-        $cite-font-style: normal,
-        // $quote-font-weight: default,
-        // $cite-font-weight: default,
-    );
-    @include block-quote-modifier(
-        $quote-color: map-get($color-options, a),
-        $cite-color: map-get($color-options, a),
-        $border-color: map-get($color-options, e),
-        $border-width: 1px,
-    );
-
-    @include block-separator();
-    @include block-separator-modifier(
-        $separator-width: 1px,
-        $separator-color: map-get($color-options, e),
-    );
-
-    @include block-table(
-        $first-row-font: d,
-        $other-rows-font: d,
-        $caption-font: f,
-        // $first-row-font-weight: default,
-        // $other-rows-font-weight: default,
-        // $caption-font-weight: default,
-    );
-    @include block-table-modifier(
-        $first-row-border-width: 1px,
-        $first-row-border-color: map-get($color-options, a),
-        $other-rows-border-width: 1px,
-        $other-rows-border-color: transparent,
-        $first-row-background: map-get($color-options, a),
-        $even-rows-background: map-get($color-options, d),
-        $odd-rows-background: map-get($color-options, b),
-        $first-row-text-color: map-get($color-options, d),
-        $other-rows-text-color: map-get($color-options, a),
-        $caption-color: map-get($color-options, a)
-    );
-
-    @include headings(
-        $h2-font: b,
-        $h3-font: c,
-        $h4-font: c,
-        $h5-font: d,
-        $h6-font: d,
-        // $h2-font-weight: default,
-        // $h3-font-weight: default,
-        // $h4-font-weight: default,
-        // $h5-font-weight: default,
-        // $h6-font-weight: default,
-    );
-    @include headings-modifier(
-        $h2-color: map-get($color-options, a),
-        $h3-color: map-get($color-options, e),
-        $h4-color: map-get($color-options, f),
-        $h5-color: map-get($color-options, a),
-        $h6-color: map-get($color-options, a),
-    );
-
-    @include links(
-        $link-class: g--link-01
-    );
-    // @include links-modifier(
-    //     $link-class-modifier: g--link-01--second
-    // );
-
-    @include lists(
-        $text-font: d,
-        $first-number-width: 22px,
-        $first-level-artwork-width: $measure,
-        $first-level-artwork-top: 13px,
-        // $second-level-artwork-width: default,
-        // $second-level-artwork-top: default,
-        // $third-level-artwork-width: default,
-        // $third-level-artwork-top:default,
-        // $text-font-weight: default,
-    );
-    @include lists-modifier(
-        $text-color: map-get($color-options, a),
-        $number-color: map-get($color-options, f),
-        // $first-level-artwork-image: default,
-        // $first-level-artwork-border-radius: false,
-        // $first-level-artwork-background: default,
-        // $first-level-artwork-border-width: default,
-        // $first-level-artwork-border-color: default,
-        // $second-level-artwork-image: default,
-        // $second-level-artwork-border-radius: false,
-        // $second-level-artwork-background: default,
-        // $second-level-artwork-border-width: default,
-        // $second-level-artwork-border-color: default,
-        // $third-level-artwork-image: default,
-        // $third-level-artwork-border-radius: false,
-        // $third-level-artwork-background: default,
-        // $third-level-artwork-border-width: default,
-        // $third-level-artwork-border-color: default,
-    );
-
-    @include paragraphs(
-        $text-font: d,
-        $bold-font-weight: 600,
-        // $text-font-weight: default,
-    );
-    @include paragraphs-modifier(
-        $text-color: map-get($color-options, a)
-    );
-
-    @include utilities();
-    
-    *:last-child {
-        margin-bottom: 0px;
-    }
-}
-```
+## Blocks
 
 All blocks except utilities have 2 mixins, one for styles and the other one for colors and modifiers.
 
@@ -478,3 +307,175 @@ Styles the default wordpress block.
 ### utilities
 
 Here are the classes Wordpress uses to align blocks left/right/center
+
+## Use
+
+Install package
+```sh
+npm i @teamthunderfoot/wysiwyg-content
+```
+
+Import content mixins at the beginning of the c--content stylesheet
+```scss
+@import "@teamthunderfoot/wysiwyg-content/src/scss/_mixins.scss";
+```
+
+Your HTML structure should look like this
+
+```php
+<div class="c--content-a">
+  <?= apply_filters('the_content',get_the_content()) ?>
+</div>
+```
+
+Copy c--content styles and change parameters with the ones we want
+```scss
+.c--content-a {
+    @include block-btn(
+        $btn-class: g--btn-01
+    );
+    // @include block-btn-modifier(
+    //     $btn-class-modifier: g--btn-01--second
+    // );
+
+    @include block-footnote(
+        $text-font: e,
+        // $text-font-weight: default,
+    );
+    @include block-footnote-modifier(
+        $text-color: map-get($color-options, a)
+    );
+
+    @include block-highlighted(
+        $text-font: c,
+        // $text-font-weight: default,
+    );
+    @include block-highlighted-modifier(
+        $text-color: map-get($color-options, a)
+    );
+
+    @include block-image(
+        $caption-font: g,
+        // $caption-font-weight: default,
+        // $img-border-radius: default
+    );
+    @include block-image-modifier(
+        $caption-color: map-get($color-options, a)
+    );
+
+    @include block-quote(
+        $quote-font: d,
+        $quote-font-style: italic,
+        $cite-font: e,
+        $cite-font-style: normal,
+        // $quote-font-weight: default,
+        // $cite-font-weight: default,
+    );
+    @include block-quote-modifier(
+        $quote-color: map-get($color-options, a),
+        $cite-color: map-get($color-options, a),
+        $border-color: map-get($color-options, e),
+        $border-width: 1px,
+    );
+
+    @include block-separator();
+    @include block-separator-modifier(
+        $separator-width: 1px,
+        $separator-color: map-get($color-options, e),
+    );
+
+    @include block-table(
+        $first-row-font: d,
+        $other-rows-font: d,
+        $caption-font: f,
+        // $first-row-font-weight: default,
+        // $other-rows-font-weight: default,
+        // $caption-font-weight: default,
+    );
+    @include block-table-modifier(
+        $first-row-border-width: 1px,
+        $first-row-border-color: map-get($color-options, a),
+        $other-rows-border-width: 1px,
+        $other-rows-border-color: transparent,
+        $first-row-background: map-get($color-options, a),
+        $even-rows-background: map-get($color-options, d),
+        $odd-rows-background: map-get($color-options, b),
+        $first-row-text-color: map-get($color-options, d),
+        $other-rows-text-color: map-get($color-options, a),
+        $caption-color: map-get($color-options, a)
+    );
+
+    @include headings(
+        $h2-font: b,
+        $h3-font: c,
+        $h4-font: c,
+        $h5-font: d,
+        $h6-font: d,
+        // $h2-font-weight: default,
+        // $h3-font-weight: default,
+        // $h4-font-weight: default,
+        // $h5-font-weight: default,
+        // $h6-font-weight: default,
+    );
+    @include headings-modifier(
+        $h2-color: map-get($color-options, a),
+        $h3-color: map-get($color-options, e),
+        $h4-color: map-get($color-options, f),
+        $h5-color: map-get($color-options, a),
+        $h6-color: map-get($color-options, a),
+    );
+
+    @include links(
+        $link-class: g--link-01
+    );
+    // @include links-modifier(
+    //     $link-class-modifier: g--link-01--second
+    // );
+
+    @include lists(
+        $text-font: d,
+        $first-number-width: 22px,
+        $first-level-artwork-width: $measure,
+        $first-level-artwork-top: 13px,
+        // $second-level-artwork-width: default,
+        // $second-level-artwork-top: default,
+        // $third-level-artwork-width: default,
+        // $third-level-artwork-top:default,
+        // $text-font-weight: default,
+    );
+    @include lists-modifier(
+        $text-color: map-get($color-options, a),
+        $number-color: map-get($color-options, f),
+        // $first-level-artwork-image: default,
+        // $first-level-artwork-border-radius: false,
+        // $first-level-artwork-background: default,
+        // $first-level-artwork-border-width: default,
+        // $first-level-artwork-border-color: default,
+        // $second-level-artwork-image: default,
+        // $second-level-artwork-border-radius: false,
+        // $second-level-artwork-background: default,
+        // $second-level-artwork-border-width: default,
+        // $second-level-artwork-border-color: default,
+        // $third-level-artwork-image: default,
+        // $third-level-artwork-border-radius: false,
+        // $third-level-artwork-background: default,
+        // $third-level-artwork-border-width: default,
+        // $third-level-artwork-border-color: default,
+    );
+
+    @include paragraphs(
+        $text-font: d,
+        $bold-font-weight: 600,
+        // $text-font-weight: default,
+    );
+    @include paragraphs-modifier(
+        $text-color: map-get($color-options, a)
+    );
+
+    @include utilities();
+    
+    *:last-child {
+        margin-bottom: 0px;
+    }
+}
+```
