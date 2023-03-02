@@ -7,6 +7,7 @@
             flex-grow: 1;
             @media all and ($viewport-type: $tablets) {
                 flex-basis: 100% !important;
+                flex-wrap: wrap !important;
             }
         }
     }
