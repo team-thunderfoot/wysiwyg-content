@@ -4,7 +4,7 @@
 
 - [block-btn](#block-btn)
 - [block-footnote](#block-footnote)
-- [block-highlighted](#block-highlighted-(highlighted-paragraph)) (highlighted paragraph)
+- [block-highlighted](#block-highlighted-highlighted-paragraph) (highlighted paragraph)
 - [block-image](#block-image)
 - [block-quote](#block-quote)
 - [block-separator](#block-separator)
