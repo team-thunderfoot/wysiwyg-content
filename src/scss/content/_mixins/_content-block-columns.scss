@@ -1,0 +1,13 @@
+@mixin block-columns() {
+    .wp-block-columns{
+        margin-bottom: $measure*4;
+        .wp-block-column{
+            display: flex;
+            flex-basis: 0 !important;
+            flex-grow: 1;
+            @media all and ($viewport-type: $tablets) {
+                flex-basis: 100% !important;
+            }
+        }
+    }
+}

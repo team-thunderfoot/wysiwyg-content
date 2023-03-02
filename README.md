@@ -3,6 +3,7 @@
 ## Stylized blocks
 
 - [block-btn](#block-btn)
+- [block-columns](#block-columns)
 - [block-footnote](#block-footnote)
 - [block-highlighted](#block-highlighted-highlighted-paragraph) (highlighted paragraph)
 - [block-image](#block-image)
@@ -34,6 +35,11 @@ With the block-btn-modifier mixin, you can add a modifier class to the btn, you 
 #### Editable variables for Modifiers
 
 - $btn-class-modifier
+
+### block-columns
+
+Styles the default wordpress block.
+With the block-columns mixin, you set the margin-bottom for columns, make all components inside them the same height and make the columns breakpoint tablets.
 
 
 ### block-footnote
@@ -216,28 +222,6 @@ Styles the default wordpress blocks.
 Unordered list artworks can be circles, squares or images, it depends on the variables we add ($X-artwork-X). If they're circles or squares they can be filled or just bordered.
 > Note: Variables named $second-level-artwork-X or $third-level-artwork-X should only be added in case we want a different value for them than for the other levels.
 
-#### Variables needed for circles:
-
-- $first-level-artwork-width
-- $first-level-artwork-top
-- $first-level-artwork-border-radius
-- $first-level-artwork-background (if its filled)
-- $first-level-artwork-border-width and $first-level-artwork-border-color (if its bordered)
-
-#### Variables needed for squares:
-
-- $first-level-artwork-width
-- $first-level-artwork-top
-- $first-level-artwork-background (if its filled)
-- $first-level-artwork-border-width and $first-level-artwork-border-color (if its bordered)
-
-#### Variables needed for images:
-
-- $first-level-artwork-width
-- $first-level-artwork-top
-- $first-level-artwork-image
-
-
 #### Editable variables
 
 - $text-font
@@ -286,6 +270,27 @@ Unordered list artworks can be circles, squares or images, it depends on the var
 - $third-level-artwork-background
 - $third-level-artwork-border-width
 - $third-level-artwork-border-color
+
+> #### Variables needed for circles:
+> 
+> - $first-level-artwork-width
+> - $first-level-artwork-top
+> - $first-level-artwork-border-radius
+> - $first-level-artwork-background (if its filled)
+> - $first-level-artwork-border-width and $first-level-artwork-border-color (if its bordered)
+
+> #### Variables needed for squares:
+> 
+> - $first-level-artwork-width
+> - $first-level-artwork-top
+> - $first-level-artwork-background (if its filled)
+> - $first-level-artwork-border-width and $first-level-artwork-border-color (if its bordered)
+
+#### Variables needed for images:
+
+- $first-level-artwork-width
+- $first-level-artwork-top
+- $first-level-artwork-image
 
 
 ### paragraphs
@@ -337,6 +342,8 @@ Copy c--content styles and change parameters with the ones we want
     // @include block-btn-modifier(
     //     $btn-class-modifier: g--btn-01--second
     // );
+
+    @include block-columns();
 
     @include block-footnote(
         $text-font: e,

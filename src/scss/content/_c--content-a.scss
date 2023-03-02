@@ -5,6 +5,7 @@
     @include block-btn-modifier(
         $btn-class-modifier: g--btn-01--second
     );
+    @include block-columns();
     @include block-footnote(
         $text-font: g,
         $text-font-weight: 300,
