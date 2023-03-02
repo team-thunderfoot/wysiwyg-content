@@ -286,11 +286,11 @@ Unordered list artworks can be circles, squares or images, it depends on the var
 > - $first-level-artwork-background (if its filled)
 > - $first-level-artwork-border-width and $first-level-artwork-border-color (if its bordered)
 
-#### Variables needed for images:
-
-- $first-level-artwork-width
-- $first-level-artwork-top
-- $first-level-artwork-image
+> #### Variables needed for images:
+> 
+> - $first-level-artwork-width
+> - $first-level-artwork-top
+> - $first-level-artwork-image
 
 
 ### paragraphs
