@@ -15,8 +15,8 @@
         @if $h2-font-weight {
             font-weight: $h2-font-weight;
         }
-        padding-top: $measure;
-        margin-bottom: $measure*4;
+        padding-top: $measure*5;
+        margin-bottom: $measure*3;
     }
     & > h3{ 
         @extend .f--font-#{$h3-font} !optional;
