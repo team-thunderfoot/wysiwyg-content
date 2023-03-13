@@ -14,7 +14,7 @@
     list-style: none;
     margin-bottom: $measure * 4; //* list margin
     li {
-      margin-bottom: $measure; //* list items margin
+      margin-bottom: $measure*2; //* list items margin
       @extend .f--font-#{$text-font} !optional;
       @if $text-font-weight {
         font-weight: $text-font-weight;
@@ -35,7 +35,7 @@
       }
       //* Nested ul
       ul{
-        margin-top: $measure;
+        margin-top: $measure*2;
         @if $second-level-artwork-width or $second-level-artwork-top or $third-level-artwork-width or $third-level-artwork-top {
           li{
             @if $second-level-artwork-width{
@@ -87,7 +87,7 @@
       }
       //* Nested ol
       ol{
-        margin-top: $measure;
+        margin-top: $measure*2;
         li{
           padding-left: calc(#{$measure*2} + #{$first-number-width*2}); //* space between number and text + number width
           ol{
