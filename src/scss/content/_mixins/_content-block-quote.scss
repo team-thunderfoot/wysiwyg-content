@@ -8,8 +8,8 @@
 ){
     .wp-block-quote, blockquote {
         padding: $measure * 3 0;
-        margin-top: $measure;
-        margin-bottom: $measure * 4;
+        margin-top: $measure*5;
+        margin-bottom: $measure*6;
         p{
             @extend .f--font-#{$quote-font} !optional;
             @if $quote-font-weight {

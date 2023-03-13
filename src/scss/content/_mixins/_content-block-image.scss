@@ -6,7 +6,7 @@
     figure.wp-block-image{
         display: block;
         width: fit-content;
-        margin: 0 auto $measure*3;
+        margin: 0 auto $measure*5;
         img{
             margin: 0;
             display: block;
@@ -24,11 +24,11 @@
         }
         &.alignleft{
             float: left;
-            margin-right: $measure*4;
+            margin-right: $measure*5;
         }
         &.alignright{
             float: right;
-            margin-left: $measure*4;
+            margin-left: $measure*5;
         }
         &.aligncenter{
             margin-left: auto;
@@ -39,7 +39,7 @@
         margin: 0;
         figure{
             margin-top: 0;
-            margin-bottom: $measure*3;
+            margin-bottom: $measure*5;
             img{
                 margin: 0;
                 display: block;

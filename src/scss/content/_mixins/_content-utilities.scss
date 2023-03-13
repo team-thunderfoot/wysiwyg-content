@@ -1,11 +1,11 @@
 @mixin utilities(){
     *.alignleft{
         float: left;
-        margin-right: $measure*4;
+        margin-right: $measure*5;
     }
     *.alignright{
         float: right;
-        margin-left: $measure*4;
+        margin-left: $measure*5;
     }
     *.aligncenter{
         margin-left: auto;

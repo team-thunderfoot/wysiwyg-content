@@ -23,31 +23,32 @@
         @if $h3-font-weight {
             font-weight: $h3-font-weight;
         }
-        padding-top: $measure;
-        margin-bottom: $measure*4;
+        padding-top: $measure*5;
+        margin-bottom: $measure*3;
     }
     & > h4{ 
         @extend .f--font-#{$h4-font} !optional;
         @if $h4-font-weight {
             font-weight: $h4-font-weight;
         }
-        padding-top: $measure;
-        margin-bottom: $measure*3;
+        padding-top: $measure*5;
+        margin-bottom: $measure*2;
     }
     & > h5 {
         @extend .f--font-#{$h5-font} !optional;
         @if $h5-font-weight {
             font-weight: $h5-font-weight;
         }
-        padding-top: $measure;
-        margin-bottom: $measure*3;
+        padding-top: $measure*5;
+        margin-bottom: $measure*2;
     }
     & > h6 {
         @extend .f--font-#{$h6-font} !optional;
         @if $h6-font-weight {
             font-weight: $h6-font-weight;
         }
-        margin-bottom: $measure*2;
+        padding-top: $measure*5;
+        margin-bottom: $measure;
     }
 }
 
