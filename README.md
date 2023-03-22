@@ -10,6 +10,7 @@
 - [block-quote](#block-quote)
 - [block-separator](#block-separator)
 - [block-table](#block-table)
+- [block-video](#block-video)
 - [headings](#headings)
 - [links](#links)
 - [lists](#lists)
@@ -257,6 +258,16 @@ Styles the default wordpress block.
         $other-rows-text-color: map-get($color-options, a),
         $caption-color: map-get($color-options, a)
     );
+```
+
+
+### block-video
+
+Styles the default wordpress block.
+With the block-video mixin, you set the aspect-ratio for the video iframes.
+
+```scss
+    @include block-video();
 ```
 
 

@@ -67,6 +67,7 @@
         $other-rows-text-color: map-get($color-options, a), //* other rows text color
         $caption-color: map-get($color-options, a) //* caption text color
     );
+    @include block-video();
     @include headings(
         $h2-font: b,
         $h3-font: c,

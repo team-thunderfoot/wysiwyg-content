@@ -1,0 +1,11 @@
+@mixin block-video() {
+    .wp-block-embed{
+        .wp-block-embed__wrapper{
+            iframe{
+                aspect-ratio: 16 / 9;
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}
