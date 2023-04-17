@@ -671,8 +671,13 @@ Copy c--content styles and change parameters with the ones we want
 
         @include utilities();
         
+        & > *:first-child {
+            margin-top: 0;
+            padding-top: 0;
+        }
         *:last-child {
-            margin-bottom: 0px;
+            margin-bottom: 0;
+            padding-bottom: 0;
         }
     }
 ```
