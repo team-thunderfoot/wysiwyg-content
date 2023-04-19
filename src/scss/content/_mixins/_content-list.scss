@@ -22,7 +22,7 @@
     }
   }
   ul {
-    li {
+    > li {
       position: relative;
       padding-left: calc(#{$measure*2} + #{$first-level-artwork-width}); //* space between artwork and text + artwork width
       &:before {
@@ -37,7 +37,7 @@
       ul{
         margin-top: $measure*2;
         @if $second-level-artwork-width or $second-level-artwork-top or $third-level-artwork-width or $third-level-artwork-top {
-          li{
+          > li{
             @if $second-level-artwork-width{
               padding-left: calc(#{$measure*2} + #{$second-level-artwork-width}); //* space between artwork and text + artwork width
               &::before{
@@ -52,7 +52,7 @@
             }
             @if $third-level-artwork-width or $third-level-artwork-top{
               ul{
-                li{
+                > li{
                   @if $third-level-artwork-width{
                     padding-left: calc(#{$measure*2} + #{$third-level-artwork-width}); //* space between artwork and text + artwork width
                     &::before{
@@ -75,7 +75,7 @@
   }
   ol {
     counter-reset: item;
-    li{
+    > li{
       position: relative;
       padding-left: calc(#{$measure*2} + #{$first-number-width}); //* space between number and text + number width
       &::before{
@@ -88,19 +88,19 @@
       //* Nested ol
       ol{
         margin-top: $measure*2;
-        li{
+        > li{
           padding-left: calc(#{$measure*2} + #{$first-number-width*2}); //* space between number and text + number width
           ol{
-            li{
+            > li{
               padding-left: calc(#{$measure*2} + #{$first-number-width*3}); //* space between number and text + number width
               ol{
-                li{
+                > li{
                   padding-left: calc(#{$measure*2} + #{$first-number-width*4}); //* space between number and text + number width
                   ol{
-                    li{
+                    > li{
                       padding-left: calc(#{$measure*2} + #{$first-number-width*5}); //* space between number and text + number width
                       ol{
-                        li{
+                        > li{
                           padding-left: calc(#{$measure*2} + #{$first-number-width*6}); //* space between number and text + number width
                         }
                       }
@@ -111,13 +111,6 @@
             }
           }
         }
-      }
-    }
-  }
-  ul {
-    > li{
-      &:before {
-        content: "";
       }
     }
   }
@@ -149,7 +142,7 @@
     }
   }
   ul {
-    li {
+    > li {
       &:before {
         @if $first-level-artwork-image{
           background: url(#{$first-level-artwork-image});
@@ -169,7 +162,7 @@
         }
       }
       ul {
-        li {
+        > li {
           &:before {
             @if $second-level-artwork-image{
               background: url(#{$second-level-artwork-image});
@@ -191,7 +184,7 @@
             }
           }
           ul {
-            li {
+            > li {
               &:before {
                 @if $third-level-artwork-image{
                   background: url(#{$third-level-artwork-image});
@@ -219,7 +212,7 @@
     }
   }
   ol {
-    li {
+    > li {
       &:before {
         color: $number-color;
       }
