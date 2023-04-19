@@ -114,6 +114,13 @@
       }
     }
   }
+  ul {
+    > li{
+      &:before {
+        content: "";
+      }
+    }
+  }
 }
 
 @mixin lists-modifier(
