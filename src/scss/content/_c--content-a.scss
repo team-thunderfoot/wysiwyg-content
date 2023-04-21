@@ -1,38 +1,56 @@
 .c--content-a {
     @include block-btn(
-        $btn-class: g--btn-01
+        $btn-class: g--btn-01,
+        // $btn-margin-bottom: $measure*4
     );
     @include block-btn-modifier(
         $btn-class-modifier: g--btn-01--second
     );
-    @include block-columns();
+
+    @include block-columns(
+        // $columns-margin-bottom: $measure*4
+    );
+
     @include block-footnote(
         $text-font: g,
         $text-font-weight: 300,
+        // $footnote-margin-bottom: $measure * 2,
     );
     @include block-footnote-modifier(
         $text-color: map-get($color-options, a)
     );
+
     @include block-highlighted(
         $text-font: c,
+        // $highlighted-margin-bottom: $measure * 4,
+        // $highlighted-padding-top: 0,
         // $text-font-weight: false,
     );
     @include block-highlighted-modifier(
         $text-color: map-get($color-options, a)
     );
+
     @include block-image(
         $caption-font: g,
+        // $image-block-margin-bottom: $measure*5,
+        // $image-text-aligned-margin-x: $measure*5,
+        // $caption-margin-top: $measure*2,
         // $caption-font-weight: false,
         // $img-border-radius: false
     );
     @include block-image-modifier(
         $caption-color: map-get($color-options, a)
     );
+
     @include block-quote(
         $quote-font: c,
         $quote-font-style: italic,
         $cite-font: e,
         $cite-font-style: normal,
+        // $quote-padding: $measure * 3 0,
+        // $quote-margin-top: $measure*5,
+        // $quote-margin-bottom: $measure*6,
+        // $cite-margin-top: $measure*3,
         // $quote-font-weight: false,
         $cite-font-weight: 300,
     );
@@ -42,11 +60,15 @@
         $border-color: map-get($color-options, e),
         $border-width: 1px,
     );
-    @include block-separator();
+
+    @include block-separator(
+        // $separator-margin: $measure * 6 0
+    );
     @include block-separator-modifier(
         $separator-width: 1px,
         $separator-color: map-get($color-options, e),
     );
+
     @include block-table(
         $first-row-font: f,
         $other-rows-font: f,
@@ -67,13 +89,25 @@
         $other-rows-text-color: map-get($color-options, a), //* other rows text color
         $caption-color: map-get($color-options, a) //* caption text color
     );
+
     @include block-video();
+
     @include headings(
         $h2-font: b,
         $h3-font: c,
         $h4-font: c,
         $h5-font: d,
         $h6-font: d,
+        // $h2-padding-top: $measure*5,
+        // $h2-margin-bottom: $measure*3,
+        // $h3-padding-top: $measure*5,
+        // $h3-margin-bottom: $measure*3,
+        // $h4-padding-top: $measure*5,
+        // $h4-margin-bottom: $measure*2,
+        // $h5-padding-top: $measure*5,
+        // $h5-margin-bottom: $measure*2,
+        // $h6-padding-top: $measure*5,
+        // $h6-margin-bottom: $measure,
         // $h2-font-weight: false,
         $h3-font-weight: 500,
         // $h4-font-weight: false,
@@ -87,17 +121,21 @@
         $h5-color: map-get($color-options, a),
         $h6-color: map-get($color-options, a),
     );
+
     @include links(
         $link-class: g--link-01
     );
     // @include links-modifier(
     //     $link-class-modifier: g--link-01--second
     // );
+
     @include lists(
         $text-font: f,
         $first-number-width: 16px,
         $first-level-artwork-width: $measure,
         $first-level-artwork-top: 13px,
+        // $lists-margin-bottom: $measure * 4,
+        // $lists-items-margin-bottom: $measure * 2,
         // $second-level-artwork-width: false,
         // $second-level-artwork-top: false,
         $third-level-artwork-width: 6px,
@@ -123,16 +161,22 @@
         $third-level-artwork-border-width: 1px,
         $third-level-artwork-border-color: map-get($color-options, g),
     );
+
     @include paragraphs(
         $text-font: f,
         $bold-font-weight: 600,
+        // $paragraphs-margin-bottom: $measure * 4,
+        // $paragraphs-before-lists-margin-bottom: $measure * 3,
         // $text-font-weight: false,
     );
     @include paragraphs-modifier(
         $text-color: map-get($color-options, a)
     );
-    @include utilities();
     
+    @include utilities(
+        // $media-text-aligned-margin-x: $measure*5
+    );
+
     & > h2,
     & > h3,
     & > h4,

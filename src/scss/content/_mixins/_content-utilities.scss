@@ -1,11 +1,13 @@
-@mixin utilities(){
+@mixin utilities(
+    $media-text-aligned-margin-x: $measure*5
+){
     *.alignleft{
         float: left;
-        margin-right: $measure*5;
+        margin-right: $media-text-aligned-margin-x;
     }
     *.alignright{
         float: right;
-        margin-left: $measure*5;
+        margin-left: $media-text-aligned-margin-x;
     }
     *.aligncenter{
         margin-left: auto;

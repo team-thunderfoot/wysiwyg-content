@@ -1,8 +1,10 @@
-@mixin block-separator(){
+@mixin block-separator(
+    $separator-margin: $measure * 6 0
+){
     .wp-block-separator{
         width: 100%;
         display: block;
-        margin: $measure * 6 0;
+        margin: $separator-margin;
         border: none;
     } 
 }

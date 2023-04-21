@@ -3,13 +3,17 @@
     $quote-font-style,
     $cite-font,
     $cite-font-style,
+    $quote-padding: $measure * 3 0,
+    $quote-margin-top: $measure*5,
+    $quote-margin-bottom: $measure*6,
+    $cite-margin-top: $measure*3,
     $quote-font-weight: false,
     $cite-font-weight: false,
 ){
     .wp-block-quote, blockquote {
-        padding: $measure * 3 0;
-        margin-top: $measure*5;
-        margin-bottom: $measure*6;
+        padding: $quote-padding;
+        margin-top: $quote-margin-top;
+        margin-bottom: $quote-margin-bottom;
         p{
             @extend .f--font-#{$quote-font} !optional;
             @if $quote-font-weight {
@@ -24,7 +28,7 @@
                 font-weight: $cite-font-weight;
             }
             font-style: $cite-font-style;
-            margin-top: $measure * 3;
+            margin-top: $cite-margin-top;
         }
     }
 }

@@ -39,7 +39,8 @@ With the block-btn-modifier mixin, you can add a modifier class to the btn, you 
 
 ```scss
     @include block-btn(
-        $btn-class: g--btn-01
+        $btn-class: g--btn-01,
+        // $btn-margin-bottom: $measure*4
     );
     // @include block-btn-modifier(
     //     $btn-class-modifier: g--btn-01--second
@@ -52,7 +53,9 @@ Styles the default wordpress block.
 With the block-columns mixin, you set the margin-bottom for columns, make all components inside them the same height and make the columns breakpoint tablets.
 
 ```scss
-    @include block-columns();
+    @include block-columns(
+        // $columns-margin-bottom: $measure*4
+    );
 ```
 
 
@@ -73,6 +76,7 @@ This is a custom block.
 ```scss
     @include block-footnote(
         $text-font: e,
+        // $footnote-margin-bottom: $measure * 2,
         // $text-font-weight: default,
     );
     @include block-footnote-modifier(
@@ -97,6 +101,8 @@ This is a custom block.
 ```scss
     @include block-highlighted(
         $text-font: c,
+        // $highlighted-margin-bottom: $measure * 4,
+        // $highlighted-padding-top: 0,
         // $text-font-weight: default,
     );
     @include block-highlighted-modifier(
@@ -123,6 +129,9 @@ Styles the default wordpress block.
 ```scss
     @include block-image(
         $caption-font: g,
+        // $image-block-margin-bottom: $measure*5,
+        // $image-text-aligned-margin-x: $measure*5,
+        // $caption-margin-top: $measure*2,
         // $caption-font-weight: default,
         // $img-border-radius: default
     );
@@ -162,6 +171,10 @@ Styles the default wordpress block.
         $quote-font-style: italic,
         $cite-font: e,
         $cite-font-style: normal,
+        // $quote-padding: $measure * 3 0,
+        // $quote-margin-top: $measure*5,
+        // $quote-margin-bottom: $measure*6,
+        // $cite-margin-top: $measure*3,
         // $quote-font-weight: default,
         // $cite-font-weight: default,
     );
@@ -189,7 +202,9 @@ Styles the default wordpress block.
 - $separator-color
 
 ```scss
-    @include block-separator();
+    @include block-separator(
+        // $separator-margin: $measure * 6 0
+    );
     @include block-separator-modifier(
         $separator-width: 1px,
         $separator-color: map-get($color-options, e),
@@ -308,6 +323,16 @@ Styles the default wordpress blocks.
         $h4-font: c,
         $h5-font: d,
         $h6-font: d,
+        // $h2-padding-top: $measure*5,
+        // $h2-margin-bottom: $measure*3,
+        // $h3-padding-top: $measure*5,
+        // $h3-margin-bottom: $measure*3,
+        // $h4-padding-top: $measure*5,
+        // $h4-margin-bottom: $measure*2,
+        // $h5-padding-top: $measure*5,
+        // $h5-margin-bottom: $measure*2,
+        // $h6-padding-top: $measure*5,
+        // $h6-margin-bottom: $measure,
         // $h2-font-weight: default,
         // $h3-font-weight: default,
         // $h4-font-weight: default,
@@ -419,6 +444,8 @@ Unordered list artworks can be circles, squares or images, it depends on the var
         $first-number-width: 22px,
         $first-level-artwork-width: $measure,
         $first-level-artwork-top: 13px,
+        // $lists-margin-bottom: $measure * 4,
+        // $lists-items-margin-bottom: $measure * 2,
         // $second-level-artwork-width: default,
         // $second-level-artwork-top: default,
         // $third-level-artwork-width: default,
@@ -487,6 +514,8 @@ Styles the default wordpress block.
     @include paragraphs(
         $text-font: d,
         $bold-font-weight: 600,
+        // $paragraphs-margin-bottom: $measure * 4,
+        // $paragraphs-before-lists-margin-bottom: $measure * 3,
         // $text-font-weight: default,
     );
     @include paragraphs-modifier(
@@ -500,7 +529,9 @@ Styles the default wordpress block.
 Here are the classes Wordpress uses to align blocks left/right/center
 
 ```scss
-    @include utilities();
+    @include utilities(
+        // $media-text-aligned-margin-x: $measure*5
+    );
 ```
 
 ## Use
@@ -527,16 +558,20 @@ Copy c--content styles and change parameters with the ones we want
 ```scss
     .c--content-a {
         @include block-btn(
-            $btn-class: g--btn-01
+            $btn-class: g--btn-01,
+            // $btn-margin-bottom: $measure*4
         );
         // @include block-btn-modifier(
         //     $btn-class-modifier: g--btn-01--second
         // );
 
-        @include block-columns();
+        @include block-columns(
+            // $columns-margin-bottom: $measure*4
+        );
 
         @include block-footnote(
             $text-font: e,
+            // $footnote-margin-bottom: $measure * 2,
             // $text-font-weight: default,
         );
         @include block-footnote-modifier(
@@ -545,6 +580,8 @@ Copy c--content styles and change parameters with the ones we want
 
         @include block-highlighted(
             $text-font: c,
+            // $highlighted-margin-bottom: $measure * 4,
+            // $highlighted-padding-top: 0,
             // $text-font-weight: default,
         );
         @include block-highlighted-modifier(
@@ -553,6 +590,9 @@ Copy c--content styles and change parameters with the ones we want
 
         @include block-image(
             $caption-font: g,
+            // $image-block-margin-bottom: $measure*5,
+            // $image-text-aligned-margin-x: $measure*5,
+            // $caption-margin-top: $measure*2,
             // $caption-font-weight: default,
             // $img-border-radius: default
         );
@@ -565,6 +605,10 @@ Copy c--content styles and change parameters with the ones we want
             $quote-font-style: italic,
             $cite-font: e,
             $cite-font-style: normal,
+            // $quote-padding: $measure * 3 0,
+            // $quote-margin-top: $measure*5,
+            // $quote-margin-bottom: $measure*6,
+            // $cite-margin-top: $measure*3,
             // $quote-font-weight: default,
             // $cite-font-weight: default,
         );
@@ -575,7 +619,9 @@ Copy c--content styles and change parameters with the ones we want
             $border-width: 1px,
         );
 
-        @include block-separator();
+        @include block-separator(
+            // $separator-margin: $measure * 6 0
+        );
         @include block-separator-modifier(
             $separator-width: 1px,
             $separator-color: map-get($color-options, e),
@@ -608,6 +654,16 @@ Copy c--content styles and change parameters with the ones we want
             $h4-font: c,
             $h5-font: d,
             $h6-font: d,
+            // $h2-padding-top: $measure*5,
+            // $h2-margin-bottom: $measure*3,
+            // $h3-padding-top: $measure*5,
+            // $h3-margin-bottom: $measure*3,
+            // $h4-padding-top: $measure*5,
+            // $h4-margin-bottom: $measure*2,
+            // $h5-padding-top: $measure*5,
+            // $h5-margin-bottom: $measure*2,
+            // $h6-padding-top: $measure*5,
+            // $h6-margin-bottom: $measure,
             // $h2-font-weight: default,
             // $h3-font-weight: default,
             // $h4-font-weight: default,
@@ -634,6 +690,8 @@ Copy c--content styles and change parameters with the ones we want
             $first-number-width: 22px,
             $first-level-artwork-width: $measure,
             $first-level-artwork-top: 13px,
+            // $lists-margin-bottom: $measure * 4,
+            // $lists-items-margin-bottom: $measure * 2,
             // $second-level-artwork-width: default,
             // $second-level-artwork-top: default,
             // $third-level-artwork-width: default,
@@ -663,13 +721,17 @@ Copy c--content styles and change parameters with the ones we want
         @include paragraphs(
             $text-font: d,
             $bold-font-weight: 600,
+            // $paragraphs-margin-bottom: $measure * 4,
+            // $paragraphs-before-lists-margin-bottom: $measure * 3,
             // $text-font-weight: default,
         );
         @include paragraphs-modifier(
             $text-color: map-get($color-options, a)
         );
 
-        @include utilities();
+        @include utilities(
+            // $media-text-aligned-margin-x: $measure*5
+        );
         
         & > h2,
         & > h3,

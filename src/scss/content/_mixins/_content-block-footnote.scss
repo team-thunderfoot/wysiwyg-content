@@ -1,9 +1,10 @@
 @mixin block-footnote(
     $text-font,
+    $footnote-margin-bottom: $measure * 2,
     $text-font-weight: false,
 ){
     & > .footnote{
-        margin-bottom: $measure * 2;
+        margin-bottom: $footnote-margin-bottom;
         @extend .f--font-#{$text-font} !optional;
         @if $text-font-weight {
             font-weight: $text-font-weight;

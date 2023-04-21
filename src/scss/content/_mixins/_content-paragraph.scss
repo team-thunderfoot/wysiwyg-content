@@ -1,6 +1,8 @@
 @mixin paragraphs(
   $text-font,
   $bold-font-weight,
+  $paragraphs-margin-bottom: $measure * 4,
+  $paragraphs-before-lists-margin-bottom: $measure * 3,
   $text-font-weight: false,
 ) {
   & > p {
@@ -8,12 +10,12 @@
     @if $text-font-weight {
       font-weight: $text-font-weight;
     }
-    margin-bottom: $measure * 4;
+    margin-bottom: $paragraphs-margin-bottom;
     &:has(
       + ul,
       + ol
     ){
-      margin-bottom: $measure * 3; //* margin if the next element is ul or ol
+      margin-bottom: $paragraphs-before-lists-margin-bottom; //* margin if the next element is ul or ol
     }
   }
   em {

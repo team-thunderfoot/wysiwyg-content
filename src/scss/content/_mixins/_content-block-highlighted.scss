@@ -1,10 +1,12 @@
 @mixin block-highlighted(
     $text-font,
+    $highlighted-margin-bottom: $measure * 4,
+    $highlighted-padding-top: 0,
     $text-font-weight: false,
 ){
     & > .highlighted{
-        margin-bottom: $measure * 4;
-        padding-top: 0;
+        margin-bottom: $highlighted-margin-bottom;
+        padding-top: $highlighted-padding-top;
         @extend .f--font-#{$text-font} !optional;
         @if $text-font-weight {
             font-weight: $text-font-weight;

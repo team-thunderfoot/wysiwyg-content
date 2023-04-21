@@ -3,6 +3,8 @@
   $first-number-width,
   $first-level-artwork-width,
   $first-level-artwork-top,
+  $lists-margin-bottom: $measure * 4,
+  $lists-items-margin-bottom: $measure * 2,
   $second-level-artwork-width: false,
   $second-level-artwork-top: false,
   $third-level-artwork-width: false,
@@ -12,9 +14,9 @@
   ul,
   ol {
     list-style: none;
-    margin-bottom: $measure * 4; //* list margin
+    margin-bottom: $lists-margin-bottom; //* list margin
     li {
-      margin-bottom: $measure*2; //* list items margin
+      margin-bottom: $lists-items-margin-bottom; //* list items margin
       @extend .f--font-#{$text-font} !optional;
       @if $text-font-weight {
         font-weight: $text-font-weight;
@@ -35,7 +37,7 @@
       }
       //* Nested ul
       ul{
-        margin-top: $measure*2;
+        margin-top: $lists-items-margin-bottom;
         @if $second-level-artwork-width or $second-level-artwork-top or $third-level-artwork-width or $third-level-artwork-top {
           > li{
             @if $second-level-artwork-width{
@@ -87,7 +89,7 @@
       }
       //* Nested ol
       ol{
-        margin-top: $measure*2;
+        margin-top: $lists-items-margin-bottom;
         > li{
           padding-left: calc(#{$measure*2} + #{$first-number-width*2}); //* space between number and text + number width
           ol{

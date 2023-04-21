@@ -1,6 +1,8 @@
-@mixin block-columns() {
+@mixin block-columns(
+    $columns-margin-bottom: $measure*4
+) {
     .wp-block-columns{
-        margin-bottom: $measure*4;
+        margin-bottom: $columns-margin-bottom;
         .wp-block-column{
             display: flex;
             flex-basis: 0 !important;
