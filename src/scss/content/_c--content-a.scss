@@ -70,23 +70,23 @@
     );
 
     @include block-table(
-        $first-row-font: f,
-        $other-rows-font: f,
+        $header-font: f,
+        $body-rows-font: f,
         $caption-font: g,
-        $first-row-font-weight: 500,
+        $header-font-weight: 600,
         // $other-rows-font-weight: false,
         // $caption-font-weight: false,
     );
     @include block-table-modifier(
-        $first-row-border-width: 1px, //* first row border
-        $first-row-border-color: map-get($color-options, a), //* first row border
-        $other-rows-border-width: 1px, //* other rows border
-        $other-rows-border-color: transparent, //* other rows border
-        $first-row-background: map-get($color-options, a), //* first row background
+        $header-border-width: 1px, //* header border
+        $header-border-color: map-get($color-options, a), //* header border
+        $body-rows-border-width: 1px, //* body rows border
+        $body-rows-border-color: transparent, //* body rows border
+        $header-background: map-get($color-options, a), //* header background
         $even-rows-background: map-get($color-options, d), //* even rows background
         $odd-rows-background: map-get($color-options, b), //* odd rows background (except the first one)
-        $first-row-text-color: map-get($color-options, d), //* first row text color
-        $other-rows-text-color: map-get($color-options, a), //* other rows text color
+        $header-text-color: map-get($color-options, d), //* header text color
+        $body-rows-text-color: map-get($color-options, a), //* body rows text color
         $caption-color: map-get($color-options, a) //* caption text color
     );
 
