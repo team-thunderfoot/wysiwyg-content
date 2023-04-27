@@ -241,36 +241,36 @@ Styles the default wordpress block.
 
 #### Editable variables for Modifiers
 
-- $first-row-border-width
-- $first-row-border-color
-- $other-rows-border-width
-- $other-rows-border-color
-- $first-row-background
+- $header-border-width
+- $header-border-color
+- $body-rows-border-width
+- $body-rows-border-color
+- $header-background
 - $even-rows-background
 - $odd-rows-background
-- $first-row-text-color
-- $other-rows-text-color
+- $header-text-color
+- $body-rows-text-color
 - $caption-color
 
 ```scss
     @include block-table(
-        $first-row-font: d,
-        $other-rows-font: d,
+        $header-font: d,
+        $body-rows-font: d,
         $caption-font: f,
-        // $first-row-font-weight: default,
-        // $other-rows-font-weight: default,
+        // $header-font-weight: default,
+        // $body-rows-font-weight: default,
         // $caption-font-weight: default,
     );
     @include block-table-modifier(
-        $first-row-border-width: 1px,
-        $first-row-border-color: map-get($color-options, a),
-        $other-rows-border-width: 1px,
-        $other-rows-border-color: transparent,
-        $first-row-background: map-get($color-options, a),
+        $header-border-width: 1px,
+        $header-border-color: map-get($color-options, a),
+        $body-rows-border-width: 1px,
+        $body-rows-border-color: transparent,
+        $header-background: map-get($color-options, a),
         $even-rows-background: map-get($color-options, d),
         $odd-rows-background: map-get($color-options, b),
-        $first-row-text-color: map-get($color-options, d),
-        $other-rows-text-color: map-get($color-options, a),
+        $header-text-color: map-get($color-options, d),
+        $body-rows-text-color: map-get($color-options, a),
         $caption-color: map-get($color-options, a)
     );
 ```
@@ -628,23 +628,23 @@ Copy c--content styles and change parameters with the ones we want
         );
 
         @include block-table(
-            $first-row-font: d,
-            $other-rows-font: d,
+            $header-font: d,
+            $body-rows-font: d,
             $caption-font: f,
-            // $first-row-font-weight: default,
-            // $other-rows-font-weight: default,
+            // $header-font-weight: default,
+            // $body-rows-font-weight: default,
             // $caption-font-weight: default,
         );
         @include block-table-modifier(
-            $first-row-border-width: 1px,
-            $first-row-border-color: map-get($color-options, a),
-            $other-rows-border-width: 1px,
-            $other-rows-border-color: transparent,
-            $first-row-background: map-get($color-options, a),
+            $header-border-width: 1px,
+            $header-border-color: map-get($color-options, a),
+            $body-rows-border-width: 1px,
+            $body-rows-border-color: transparent,
+            $header-background: map-get($color-options, a),
             $even-rows-background: map-get($color-options, d),
             $odd-rows-background: map-get($color-options, b),
-            $first-row-text-color: map-get($color-options, d),
-            $other-rows-text-color: map-get($color-options, a),
+            $header-text-color: map-get($color-options, d),
+            $body-rows-text-color: map-get($color-options, a),
             $caption-color: map-get($color-options, a)
         );
 
