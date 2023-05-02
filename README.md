@@ -65,6 +65,7 @@ This is a custom block.
 
 #### Editable variables
 
+- $footnote-margin-bottom: $measure*2 by default
 - $text-font
 - $text-font-weight: false by default
 - $text-color
@@ -90,6 +91,8 @@ This is a custom block.
 
 #### Editable variables
 
+- $highlighted-margin-bottom: $measure*4 by default
+- $highlighted-padding-top: 0 by default
 - $text-font
 - $text-font-weight: false by default
 - $text-color
@@ -119,6 +122,9 @@ Styles the default wordpress block.
 
 - $caption-font
 - $caption-font-weight: false by default
+- $caption-margin-top: $measure*2 by default
+- $image-block-margin-bottom: $measure*5 by default
+- $image-text-aligned-margin-x: $measure*5 by default
 - $img-border-radius: false by default
 - $caption-color
 
@@ -154,6 +160,10 @@ Styles the default wordpress block.
 - $quote-font-weight: false by default
 - $cite-font-weight: false by default
 - $quote-color
+- $quote-padding: $measure*3 0 by default
+- $quote-margin-top: $measure*5 by default
+- $quote-margin-bottom: $measure*6 by default
+- $cite-margin-top: $measure*3 by default
 - $cite-color
 - $border-color
 - $border-width
@@ -193,6 +203,7 @@ Styles the default wordpress block.
 
 #### Editable variables
 
+- $separator-margin: $measure*6 0 by default
 - $separator-width
 - $separator-color
 
@@ -297,6 +308,16 @@ Styles the default wordpress blocks.
 - $h4-font
 - $h5-font
 - $h6-font
+- $h2-padding-top: $measure*5 by default
+- $h2-margin-bottom: $measure*3 by default
+- $h3-padding-top: $measure*5 by default
+- $h3-margin-bottom: $measure*3 by default
+- $h4-padding-top: $measure*5 by default
+- $h4-margin-bottom: $measure*2 by default
+- $h5-padding-top: $measure*5 by default
+- $h5-margin-bottom: $measure*2 by default
+- $h6-padding-top: $measure*5 by default
+- $h6-margin-bottom: $measure by default
 - $h2-font-weight: false by default
 - $h3-font-weight: false by default
 - $h4-font-weight: false by default
@@ -401,6 +422,8 @@ Unordered list artworks can be circles, squares or images, it depends on the var
 - $third-level-artwork-top: false by default
 - $text-font-weight: false by default
 - $text-color
+- $lists-margin-bottom: $measure*4 by default
+- $lists-items-margin-bottom: $measure*2 by default
 - $number-color
 - $first-level-artwork-image: false by default
 - $first-level-artwork-border-radius: false by default
@@ -505,6 +528,8 @@ Styles the default wordpress block.
 - $text-font
 - $text-font-weight: false by default
 - $text-color
+- $paragraphs-margin-bottom: $measure*4 by default
+- $paragraphs-before-lists-margin-bottom: $measure*3 by default
 
 #### Editable variables for Modifiers
 
@@ -527,6 +552,10 @@ Styles the default wordpress block.
 ### utilities
 
 Here are the classes Wordpress uses to align blocks left/right/center
+
+#### Editable variables
+
+- $media-text-aligned-margin-x: $measure*5 by default
 
 ```scss
     @include utilities(

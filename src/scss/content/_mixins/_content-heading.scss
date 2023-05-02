@@ -15,15 +15,26 @@
     $h6-padding-top: $measure*5,
     $h6-margin-bottom: $measure,
     $h2-font-weight: false,
+    $h2-font-weight-bold: false,
     $h3-font-weight: false,
+    $h3-font-weight-bold: false,
     $h4-font-weight: false,
+    $h4-font-weight-bold: false,
     $h5-font-weight: false,
+    $h5-font-weight-bold: false,
     $h6-font-weight: false,
+    $h6-font-weight-bold: false,
 ){
     & > h2{
         @extend .f--font-#{$h2-font} !optional;
         @if $h2-font-weight {
             font-weight: $h2-font-weight;
+        }
+        @if $h2-font-weight-bold {
+            strong,
+            b{
+                font-weight: $h2-font-weight-bold;
+            }
         }
         padding-top: $h2-padding-top;
         margin-bottom: $h2-margin-bottom;
@@ -33,6 +44,12 @@
         @if $h3-font-weight {
             font-weight: $h3-font-weight;
         }
+        @if $h3-font-weight-bold {
+            strong,
+            b{
+                font-weight: $h3-font-weight-bold;
+            }
+        }
         padding-top: $h3-padding-top;
         margin-bottom: $h3-margin-bottom;
     }
@@ -40,6 +57,12 @@
         @extend .f--font-#{$h4-font} !optional;
         @if $h4-font-weight {
             font-weight: $h4-font-weight;
+        }
+        @if $h4-font-weight-bold {
+            strong,
+            b{
+                font-weight: $h4-font-weight-bold;
+            }
         }
         padding-top: $h4-padding-top;
         margin-bottom: $h4-margin-bottom;
@@ -49,6 +72,12 @@
         @if $h5-font-weight {
             font-weight: $h5-font-weight;
         }
+        @if $h5-font-weight-bold {
+            strong,
+            b{
+                font-weight: $h5-font-weight-bold;
+            }
+        }
         padding-top: $h5-padding-top;
         margin-bottom: $h5-margin-bottom;
     }
@@ -56,6 +85,12 @@
         @extend .f--font-#{$h6-font} !optional;
         @if $h6-font-weight {
             font-weight: $h6-font-weight;
+        }
+        @if $h6-font-weight-bold {
+            strong,
+            b{
+                font-weight: $h6-font-weight-bold;
+            }
         }
         padding-top: $h6-padding-top;
         margin-bottom: $h6-margin-bottom;
