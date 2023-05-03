@@ -677,6 +677,8 @@ Copy c--content styles and change parameters with the ones we want
             $caption-color: map-get($color-options, a)
         );
 
+        @include block-video();
+
         @include headings(
             $h2-font: b,
             $h3-font: c,
