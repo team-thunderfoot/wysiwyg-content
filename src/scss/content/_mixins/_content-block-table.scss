@@ -2,12 +2,16 @@
     $header-font,
     $body-rows-font,
     $caption-font,
+    $table-margin-bottom: $measure*4,
+    $header-cells-padding: $measure*2,
+    $body-cells-padding: $measure $measure * 2,
+    $caption-margin-top: $measure * 2,
     $header-font-weight: false,
     $body-rows-font-weight: false,
     $caption-font-weight: false,
 ){
     .wp-block-table{
-        margin-bottom: $measure*4;
+        margin-bottom: $table-margin-bottom;
         table,
         table.wp-block-table {
             width: 100%;
@@ -25,7 +29,7 @@
         }
         table thead tr { //* first row
             th {
-                padding: $measure * 2;
+                padding: $header-cells-padding;
                 @extend .f--font-#{$header-font} !optional;
                 @if $header-font-weight {
                     font-weight: $header-font-weight;
@@ -38,7 +42,7 @@
             @if $body-rows-font-weight {
                 font-weight: $body-rows-font-weight;
             }
-            padding: $measure $measure * 2;
+            padding: $body-cells-padding;
             margin: 0px;
         }
         figcaption{
@@ -46,7 +50,7 @@
             @if $caption-font-weight {
                 font-weight: $caption-font-weight;
             }
-            margin-top: $measure*2;
+            margin-top: $caption-margin-top;
             text-align: right;
         }
     }

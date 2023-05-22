@@ -1,5 +1,8 @@
-@mixin block-video() {
+@mixin block-video(
+    $video-block-margin-bottom: $measure*5,
+) {
     .wp-block-embed{
+        margin: 0 auto $video-block-margin-bottom;
         .wp-block-embed__wrapper{
             iframe{
                 aspect-ratio: 16 / 9;
