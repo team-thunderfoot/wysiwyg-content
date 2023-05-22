@@ -764,13 +764,15 @@ Copy c--content styles and change parameters with the ones we want
             // $media-text-aligned-margin-x: $measure*5
         );
         
-        & > h2,
-        & > h3,
-        & > h4,
-        & > h5,
-        & > h6 {   
+        & > h2:first-child,
+        & > h3:first-child,
+        & > h4:first-child,
+        & > h5:first-child,
+        & > h6:first-child,
+        & > p:first-child  {   
             padding-top: 0;
         }
+        
         *:last-child {
             margin-bottom: 0;
         }
