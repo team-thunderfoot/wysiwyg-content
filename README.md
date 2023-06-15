@@ -32,6 +32,7 @@ With the block-btn-modifier mixin, you can add a modifier class to the btn, you 
 
 - $btn-class
 - $btn-class-modifier
+- $btn-margin-bottom
 
 #### Editable variables for Modifiers
 
@@ -52,6 +53,10 @@ With the block-btn-modifier mixin, you can add a modifier class to the btn, you 
 Styles the default wordpress block.
 With the block-columns mixin, you set the margin-bottom for columns, make all components inside them the same height and make the columns breakpoint tablets.
 
+#### Editable variables
+
+- $columns-margin-bottom
+
 ```scss
     @include block-columns(
         // $columns-margin-bottom: $measure*4
@@ -65,7 +70,7 @@ This is a custom block.
 
 #### Editable variables
 
-- $footnote-margin-bottom: $measure*2 by default
+- $footnote-margin-bottom
 - $text-font
 - $text-font-weight: false by default
 - $text-color
@@ -91,8 +96,8 @@ This is a custom block.
 
 #### Editable variables
 
-- $highlighted-margin-bottom: $measure*4 by default
-- $highlighted-padding-top: 0 by default
+- $highlighted-margin-bottom
+- $highlighted-padding-top
 - $text-font
 - $text-font-weight: false by default
 - $text-color
@@ -106,7 +111,7 @@ This is a custom block.
         $text-font: c,
         // $highlighted-margin-bottom: $measure * 4,
         // $highlighted-padding-top: 0,
-        // $text-font-weight: default,
+        // $text-font-weight: false,
     );
     @include block-highlighted-modifier(
         $text-color: map-get($color-options, a)
@@ -121,11 +126,11 @@ Styles the default wordpress block.
 #### Editable variables
 
 - $caption-font
-- $caption-font-weight: false by default
-- $caption-margin-top: $measure*2 by default
-- $image-block-margin-bottom: $measure*5 by default
-- $image-text-aligned-margin-x: $measure*5 by default
-- $img-border-radius: false by default
+- $caption-font-weight
+- $caption-margin-top
+- $image-block-margin-bottom
+- $image-text-aligned-margin-x
+- $img-border-radius
 - $caption-color
 
 #### Editable variables for Modifiers
@@ -138,8 +143,8 @@ Styles the default wordpress block.
         // $image-block-margin-bottom: $measure*5,
         // $image-text-aligned-margin-x: $measure*5,
         // $caption-margin-top: $measure*2,
-        // $caption-font-weight: default,
-        // $img-border-radius: default
+        // $caption-font-weight: false,
+        // $img-border-radius: false
     );
     @include block-image-modifier(
         $caption-color: map-get($color-options, a)
@@ -157,13 +162,13 @@ Styles the default wordpress block.
 - $quote-font-style
 - $cite-font
 - $cite-font-style
-- $quote-font-weight: false by default
-- $cite-font-weight: false by default
+- $quote-font-weight
+- $cite-font-weight
 - $quote-color
-- $quote-padding: $measure*3 0 by default
-- $quote-margin-top: $measure*5 by default
-- $quote-margin-bottom: $measure*6 by default
-- $cite-margin-top: $measure*3 by default
+- $quote-padding
+- $quote-margin-top
+- $quote-margin-bottom
+- $cite-margin-top
 - $cite-color
 - $border-color
 - $border-width
@@ -185,8 +190,8 @@ Styles the default wordpress block.
         // $quote-margin-top: $measure*5,
         // $quote-margin-bottom: $measure*6,
         // $cite-margin-top: $measure*3,
-        // $quote-font-weight: default,
-        // $cite-font-weight: default,
+        // $quote-font-weight: false,
+        // $cite-font-weight: false,
     );
     @include block-quote-modifier(
         $quote-color: map-get($color-options, a),
@@ -203,7 +208,7 @@ Styles the default wordpress block.
 
 #### Editable variables
 
-- $separator-margin: $measure*6 0 by default
+- $separator-margin
 - $separator-width
 - $separator-color
 
@@ -233,21 +238,25 @@ Styles the default wordpress block.
 
 #### Editable variables
 
-- $first-row-font
-- $other-rows-font
+- $header-font
+- $body-rows-font
 - $caption-font
-- $first-row-font-weight: false by default
-- $other-rows-font-weight: false by default
-- $caption-font-weight: false by default
-- $first-row-border-width
-- $first-row-border-color
-- $other-rows-border-width
-- $other-rows-border-color
-- $first-row-background
+- $table-margin-bottom
+- $header-cells-padding
+- $body-cells-padding
+- $caption-margin-top
+- $header-font-weight
+- $body-rows-font-weight
+- $caption-font-weight
+- $header-border-width
+- $header-border-color
+- $body-rows-border-width
+- $body-rows-border-color
+- $header-background
 - $even-rows-background
 - $odd-rows-background
-- $first-row-text-color
-- $other-rows-text-color
+- $header-text-color
+- $body-rows-text-color
 - $caption-color
 
 #### Editable variables for Modifiers
@@ -268,9 +277,13 @@ Styles the default wordpress block.
         $header-font: d,
         $body-rows-font: d,
         $caption-font: f,
-        // $header-font-weight: default,
-        // $body-rows-font-weight: default,
-        // $caption-font-weight: default,
+        // $table-margin-bottom: $measure*4,
+        // $header-cells-padding: $measure*2,
+        // $body-cells-padding: $measure $measure * 2,
+        // $caption-margin-top: $measure * 2,
+        // $header-font-weight: false,
+        // $body-rows-font-weight: false,
+        // $caption-font-weight: false,
     );
     @include block-table-modifier(
         $header-border-width: 1px,
@@ -292,8 +305,14 @@ Styles the default wordpress block.
 Styles the default wordpress block.
 With the block-video mixin, you set the aspect-ratio for the video iframes.
 
+#### Editable variables
+
+- $video-block-margin-bottom
+
 ```scss
-    @include block-video();
+    @include block-video(
+        // $video-block-margin-bottom: $measure*5,
+    );
 ```
 
 
@@ -308,21 +327,26 @@ Styles the default wordpress blocks.
 - $h4-font
 - $h5-font
 - $h6-font
-- $h2-padding-top: $measure*5 by default
-- $h2-margin-bottom: $measure*3 by default
-- $h3-padding-top: $measure*5 by default
-- $h3-margin-bottom: $measure*3 by default
-- $h4-padding-top: $measure*5 by default
-- $h4-margin-bottom: $measure*2 by default
-- $h5-padding-top: $measure*5 by default
-- $h5-margin-bottom: $measure*2 by default
-- $h6-padding-top: $measure*5 by default
-- $h6-margin-bottom: $measure by default
-- $h2-font-weight: false by default
-- $h3-font-weight: false by default
-- $h4-font-weight: false by default
-- $h5-font-weight: false by default
-- $h6-font-weight: false by default
+- $h2-padding-top
+- $h2-margin-bottom
+- $h3-padding-top
+- $h3-margin-bottom
+- $h4-padding-top
+- $h4-margin-bottom
+- $h5-padding-top
+- $h5-margin-bottom
+- $h6-padding-top
+- $h6-margin-bottom
+- $h2-font-weight
+- $h2-font-weight-bold
+- $h3-font-weight
+- $h3-font-weight-bold
+- $h4-font-weight
+- $h4-font-weight-bold
+- $h5-font-weight
+- $h5-font-weight-bold
+- $h6-font-weight
+- $h6-font-weight-bold
 - $h2-color
 - $h3-color
 - $h4-color
@@ -354,11 +378,16 @@ Styles the default wordpress blocks.
         // $h5-margin-bottom: $measure*2,
         // $h6-padding-top: $measure*5,
         // $h6-margin-bottom: $measure,
-        // $h2-font-weight: default,
-        // $h3-font-weight: default,
-        // $h4-font-weight: default,
-        // $h5-font-weight: default,
-        // $h6-font-weight: default,
+        // $h2-font-weight: false,
+        // $h2-font-weight-bold: false,
+        // $h3-font-weight: false,
+        // $h3-font-weight-bold: false,
+        // $h4-font-weight: false,
+        // $h4-font-weight-bold: false,
+        // $h5-font-weight: false,
+        // $h5-font-weight-bold: false,
+        // $h6-font-weight: false,
+        // $h6-font-weight-bold: false,
     );
     @include headings-modifier(
         $h2-color: map-get($color-options, a),
@@ -416,30 +445,30 @@ Unordered list artworks can be circles, squares or images, it depends on the var
 - $first-number-width
 - $first-level-artwork-width
 - $first-level-artwork-top
-- $second-level-artwork-width: false by default
-- $second-level-artwork-top: false by default
-- $third-level-artwork-width: false by default
-- $third-level-artwork-top: false by default
-- $text-font-weight: false by default
+- $lists-margin-bottom
+- $lists-items-margin-bottom
+- $second-level-artwork-width
+- $second-level-artwork-top
+- $third-level-artwork-width
+- $third-level-artwork-top
+- $text-font-weight
 - $text-color
-- $lists-margin-bottom: $measure*4 by default
-- $lists-items-margin-bottom: $measure*2 by default
 - $number-color
-- $first-level-artwork-image: false by default
-- $first-level-artwork-border-radius: false by default
-- $first-level-artwork-background: false by default
-- $first-level-artwork-border-width: false by default
-- $first-level-artwork-border-color: false by default
-- $second-level-artwork-image: false by default
-- $second-level-artwork-border-radius: false by default
-- $second-level-artwork-background: false by default
-- $second-level-artwork-border-width: false by default
-- $second-level-artwork-border-color: false by default
-- $third-level-artwork-image: false by default
-- $third-level-artwork-border-radius: false by default
-- $third-level-artwork-background: false by default
-- $third-level-artwork-border-width: false by default
-- $third-level-artwork-border-color: false by default
+- $first-level-artwork-image
+- $first-level-artwork-border-radius
+- $first-level-artwork-background
+- $first-level-artwork-border-width
+- $first-level-artwork-border-color
+- $second-level-artwork-image
+- $second-level-artwork-border-radius
+- $second-level-artwork-background
+- $second-level-artwork-border-width
+- $second-level-artwork-border-color
+- $third-level-artwork-image
+- $third-level-artwork-border-radius
+- $third-level-artwork-background
+- $third-level-artwork-border-width
+- $third-level-artwork-border-color
 
 #### Editable variables for Modifiers
 
@@ -469,30 +498,30 @@ Unordered list artworks can be circles, squares or images, it depends on the var
         $first-level-artwork-top: 13px,
         // $lists-margin-bottom: $measure * 4,
         // $lists-items-margin-bottom: $measure * 2,
-        // $second-level-artwork-width: default,
-        // $second-level-artwork-top: default,
-        // $third-level-artwork-width: default,
-        // $third-level-artwork-top:default,
-        // $text-font-weight: default,
+        // $second-level-artwork-width: false,
+        // $second-level-artwork-top: false,
+        // $third-level-artwork-width: false,
+        // $third-level-artwork-top:false,
+        // $text-font-weight: false,
     );
     @include lists-modifier(
         $text-color: map-get($color-options, a),
         $number-color: map-get($color-options, f),
-        // $first-level-artwork-image: default,
+        // $first-level-artwork-image: false,
         // $first-level-artwork-border-radius: false,
-        // $first-level-artwork-background: default,
-        // $first-level-artwork-border-width: default,
-        // $first-level-artwork-border-color: default,
-        // $second-level-artwork-image: default,
+        // $first-level-artwork-background: false,
+        // $first-level-artwork-border-width: false,
+        // $first-level-artwork-border-color: false,
+        // $second-level-artwork-image: false,
         // $second-level-artwork-border-radius: false,
-        // $second-level-artwork-background: default,
-        // $second-level-artwork-border-width: default,
-        // $second-level-artwork-border-color: default,
-        // $third-level-artwork-image: default,
+        // $second-level-artwork-background: false,
+        // $second-level-artwork-border-width: false,
+        // $second-level-artwork-border-color: false,
+        // $third-level-artwork-image: false,
         // $third-level-artwork-border-radius: false,
-        // $third-level-artwork-background: default,
-        // $third-level-artwork-border-width: default,
-        // $third-level-artwork-border-color: default,
+        // $third-level-artwork-background: false,
+        // $third-level-artwork-border-width: false,
+        // $third-level-artwork-border-color: false,
     );
 ```
 
@@ -526,10 +555,10 @@ Styles the default wordpress block.
 
 - $bold-font-weight
 - $text-font
-- $text-font-weight: false by default
+- $paragraphs-margin-bottom
+- $paragraphs-before-lists-margin-bottom
+- $text-font-weight
 - $text-color
-- $paragraphs-margin-bottom: $measure*4 by default
-- $paragraphs-before-lists-margin-bottom: $measure*3 by default
 
 #### Editable variables for Modifiers
 
@@ -537,11 +566,11 @@ Styles the default wordpress block.
 
 ```scss
     @include paragraphs(
-        $text-font: d,
         $bold-font-weight: 600,
+        $text-font: d,
         // $paragraphs-margin-bottom: $measure * 4,
         // $paragraphs-before-lists-margin-bottom: $measure * 3,
-        // $text-font-weight: default,
+        // $text-font-weight: false,
     );
     @include paragraphs-modifier(
         $text-color: map-get($color-options, a)
@@ -555,7 +584,7 @@ Here are the classes Wordpress uses to align blocks left/right/center
 
 #### Editable variables
 
-- $media-text-aligned-margin-x: $measure*5 by default
+- $media-text-aligned-margin-x
 
 ```scss
     @include utilities(
@@ -611,7 +640,7 @@ Copy c--content styles and change parameters with the ones we want
             $text-font: c,
             // $highlighted-margin-bottom: $measure * 4,
             // $highlighted-padding-top: 0,
-            // $text-font-weight: default,
+            // $text-font-weight: false,
         );
         @include block-highlighted-modifier(
             $text-color: map-get($color-options, a)
@@ -622,8 +651,8 @@ Copy c--content styles and change parameters with the ones we want
             // $image-block-margin-bottom: $measure*5,
             // $image-text-aligned-margin-x: $measure*5,
             // $caption-margin-top: $measure*2,
-            // $caption-font-weight: default,
-            // $img-border-radius: default
+            // $caption-font-weight: false,
+            // $img-border-radius: false
         );
         @include block-image-modifier(
             $caption-color: map-get($color-options, a)
@@ -638,8 +667,8 @@ Copy c--content styles and change parameters with the ones we want
             // $quote-margin-top: $measure*5,
             // $quote-margin-bottom: $measure*6,
             // $cite-margin-top: $measure*3,
-            // $quote-font-weight: default,
-            // $cite-font-weight: default,
+            // $quote-font-weight: false,
+            // $cite-font-weight: false,
         );
         @include block-quote-modifier(
             $quote-color: map-get($color-options, a),
@@ -660,9 +689,13 @@ Copy c--content styles and change parameters with the ones we want
             $header-font: d,
             $body-rows-font: d,
             $caption-font: f,
-            // $header-font-weight: default,
-            // $body-rows-font-weight: default,
-            // $caption-font-weight: default,
+            // $table-margin-bottom: $measure*4,
+            // $header-cells-padding: $measure*2,
+            // $body-cells-padding: $measure $measure * 2,
+            // $caption-margin-top: $measure * 2,
+            // $header-font-weight: false,
+            // $body-rows-font-weight: false,
+            // $caption-font-weight: false,
         );
         @include block-table-modifier(
             $header-border-width: 1px,
@@ -677,7 +710,9 @@ Copy c--content styles and change parameters with the ones we want
             $caption-color: map-get($color-options, a)
         );
 
-        @include block-video();
+        @include block-video(
+            // $video-block-margin-bottom: $measure*5,
+        );
 
         @include headings(
             $h2-font: b,
@@ -695,11 +730,16 @@ Copy c--content styles and change parameters with the ones we want
             // $h5-margin-bottom: $measure*2,
             // $h6-padding-top: $measure*5,
             // $h6-margin-bottom: $measure,
-            // $h2-font-weight: default,
-            // $h3-font-weight: default,
-            // $h4-font-weight: default,
-            // $h5-font-weight: default,
-            // $h6-font-weight: default,
+            // $h2-font-weight: false,
+            // $h2-font-weight-bold: false,
+            // $h3-font-weight: false,
+            // $h3-font-weight-bold: false,
+            // $h4-font-weight: false,
+            // $h4-font-weight-bold: false,
+            // $h5-font-weight: false,
+            // $h5-font-weight-bold: false,
+            // $h6-font-weight: false,
+            // $h6-font-weight-bold: false,
         );
         @include headings-modifier(
             $h2-color: map-get($color-options, a),
@@ -723,38 +763,38 @@ Copy c--content styles and change parameters with the ones we want
             $first-level-artwork-top: 13px,
             // $lists-margin-bottom: $measure * 4,
             // $lists-items-margin-bottom: $measure * 2,
-            // $second-level-artwork-width: default,
-            // $second-level-artwork-top: default,
-            // $third-level-artwork-width: default,
-            // $third-level-artwork-top:default,
-            // $text-font-weight: default,
+            // $second-level-artwork-width: false,
+            // $second-level-artwork-top: false,
+            // $third-level-artwork-width: false,
+            // $third-level-artwork-top:false,
+            // $text-font-weight: false,
         );
         @include lists-modifier(
             $text-color: map-get($color-options, a),
             $number-color: map-get($color-options, f),
-            // $first-level-artwork-image: default,
+            // $first-level-artwork-image: false,
             // $first-level-artwork-border-radius: false,
-            // $first-level-artwork-background: default,
-            // $first-level-artwork-border-width: default,
-            // $first-level-artwork-border-color: default,
-            // $second-level-artwork-image: default,
+            // $first-level-artwork-background: false,
+            // $first-level-artwork-border-width: false,
+            // $first-level-artwork-border-color: false,
+            // $second-level-artwork-image: false,
             // $second-level-artwork-border-radius: false,
-            // $second-level-artwork-background: default,
-            // $second-level-artwork-border-width: default,
-            // $second-level-artwork-border-color: default,
-            // $third-level-artwork-image: default,
+            // $second-level-artwork-background: false,
+            // $second-level-artwork-border-width: false,
+            // $second-level-artwork-border-color: false,
+            // $third-level-artwork-image: false,
             // $third-level-artwork-border-radius: false,
-            // $third-level-artwork-background: default,
-            // $third-level-artwork-border-width: default,
-            // $third-level-artwork-border-color: default,
+            // $third-level-artwork-background: false,
+            // $third-level-artwork-border-width: false,
+            // $third-level-artwork-border-color: false,
         );
 
         @include paragraphs(
-            $text-font: d,
             $bold-font-weight: 600,
+            $text-font: d,
             // $paragraphs-margin-bottom: $measure * 4,
             // $paragraphs-before-lists-margin-bottom: $measure * 3,
-            // $text-font-weight: default,
+            // $text-font-weight: false,
         );
         @include paragraphs-modifier(
             $text-color: map-get($color-options, a)
@@ -772,7 +812,7 @@ Copy c--content styles and change parameters with the ones we want
         & > p:first-child  {   
             padding-top: 0;
         }
-        
+
         *:last-child {
             margin-bottom: 0;
         }

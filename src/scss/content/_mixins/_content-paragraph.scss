@@ -1,6 +1,6 @@
 @mixin paragraphs(
-  $text-font,
   $bold-font-weight,
+  $text-font,
   $paragraphs-margin-bottom: $measure * 4,
   $paragraphs-before-lists-margin-bottom: $measure * 3,
   $text-font-weight: false,
