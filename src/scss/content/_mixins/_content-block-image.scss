@@ -6,7 +6,7 @@
     $caption-font-weight: false,
     $img-border-radius: false,
 ) {
-    figure.wp-block-image{
+    figure.wp-block-image {
         display: block;
         width: fit-content;
         margin: 0 auto $image-block-margin-bottom;
@@ -54,6 +54,27 @@
                 }
                 text-align: right;
                 margin-top: $caption-margin-top;
+            }
+        }
+    }
+    *[class^='wp-block'] {
+        img {
+            margin: 0 auto $image-block-margin-bottom;
+            display: block;
+            @if $img-border-radius {
+                border-radius: $img-border-radius
+            }
+            &.alignleft{
+                float: left;
+                margin-right: $image-text-aligned-margin-x;
+            }
+            &.alignright{
+                float: right;
+                margin-left: $image-text-aligned-margin-x;
+            }
+            &.aligncenter{
+                margin-left: auto;
+                margin-right: auto;
             }
         }
     }
