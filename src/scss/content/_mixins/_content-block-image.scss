@@ -78,6 +78,28 @@
             }
         }
     }
+    > p {
+        > img{
+            margin: 0;
+            display: block;
+            @if $img-border-radius {
+                border-radius: $img-border-radius
+            }
+
+            &.alignleft{
+                float: left;
+                margin-right: $image-text-aligned-margin-x;
+            }
+            &.alignright{
+                float: right;
+                margin-left: $image-text-aligned-margin-x;
+            }
+            &.aligncenter{
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
 }
 
 @mixin block-image-modifier(
