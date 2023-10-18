@@ -1,4 +1,5 @@
 @mixin block-image(
+    $caption-align: right,
     $caption-font,
     $image-block-margin-bottom: $measure*5,
     $image-text-aligned-margin-x: $measure*5,
@@ -22,8 +23,16 @@
             @if $caption-font-weight {
                 font-weight: $caption-font-weight;
             }
-            text-align: right;
             margin-top: $caption-margin-top;
+            @if $caption-align == "left" {
+                text-align: left;
+            }
+            @if $caption-align == "center" {
+                text-align: center;
+            }
+            @if $caption-align == "right" {
+                text-align: right;
+            }
         }
         &.alignleft{
             float: left;

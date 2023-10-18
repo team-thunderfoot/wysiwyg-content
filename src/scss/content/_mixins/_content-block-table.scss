@@ -5,6 +5,7 @@
     $table-margin-bottom: $measure*4,
     $header-cells-padding: $measure*2,
     $body-cells-padding: $measure $measure * 2,
+    $caption-align: right,
     $caption-margin-top: $measure * 2,
     $header-font-weight: false,
     $body-rows-font-weight: false,
@@ -51,7 +52,15 @@
                 font-weight: $caption-font-weight;
             }
             margin-top: $caption-margin-top;
-            text-align: right;
+            @if $caption-align == "left" {
+                text-align: left;
+            }
+            @if $caption-align == "center" {
+                text-align: center;
+            }
+            @if $caption-align == "right" {
+                text-align: right;
+            }
         }
     }
 }

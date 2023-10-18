@@ -31,6 +31,7 @@
     );
 
     @include block-image(
+        $caption-align: left,
         $caption-font: g,
         // $image-block-margin-bottom: $measure*5,
         // $image-text-aligned-margin-x: $measure*5,

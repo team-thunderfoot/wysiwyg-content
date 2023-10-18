@@ -125,6 +125,7 @@ Styles the default wordpress block.
 
 #### Editable variables
 
+- $caption-align: right,
 - $caption-font
 - $caption-font-weight
 - $caption-margin-top
@@ -139,6 +140,7 @@ Styles the default wordpress block.
 
 ```scss
     @include block-image(
+        $caption-align: right,
         $caption-font: g,
         // $image-block-margin-bottom: $measure*5,
         // $image-text-aligned-margin-x: $measure*5,
@@ -247,6 +249,7 @@ Styles the default wordpress block.
 - $caption-margin-top
 - $header-font-weight
 - $body-rows-font-weight
+- $caption-align: right,
 - $caption-font-weight
 - $header-border-width
 - $header-border-color
@@ -276,6 +279,7 @@ Styles the default wordpress block.
     @include block-table(
         $header-font: d,
         $body-rows-font: d,
+        $caption-align: right,
         $caption-font: f,
         // $table-margin-bottom: $measure*4,
         // $header-cells-padding: $measure*2,
@@ -647,6 +651,7 @@ Copy c--content styles and change parameters with the ones we want
         );
 
         @include block-image(
+            $caption-align: right,
             $caption-font: g,
             // $image-block-margin-bottom: $measure*5,
             // $image-text-aligned-margin-x: $measure*5,
@@ -688,6 +693,7 @@ Copy c--content styles and change parameters with the ones we want
         @include block-table(
             $header-font: d,
             $body-rows-font: d,
+            $caption-align: right,
             $caption-font: f,
             // $table-margin-bottom: $measure*4,
             // $header-cells-padding: $measure*2,
