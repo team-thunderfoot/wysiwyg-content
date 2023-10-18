@@ -1,6 +1,6 @@
 @mixin block-image(
-    $caption-align: right,
     $caption-font,
+    $caption-align: right,
     $image-block-margin-bottom: $measure*5,
     $image-text-aligned-margin-x: $measure*5,
     $caption-margin-top: $measure*2,
