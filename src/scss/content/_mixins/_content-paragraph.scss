@@ -5,7 +5,7 @@
   $paragraphs-before-lists-margin-bottom: $measure * 3,
   $text-font-weight: false,
 ) {
-  & > p {
+  & > p, .wp-block-column p, .wp-block-media-text p {
     @extend .f--font-#{$text-font} !optional;
     @if $text-font-weight {
       font-weight: $text-font-weight;
@@ -29,7 +29,7 @@
 @mixin paragraphs-modifier(
   $text-color
 ) {
-  & > p {
+  & > p, .wp-block-column p, .wp-block-media-text p {
     color: $text-color;
   }
 }

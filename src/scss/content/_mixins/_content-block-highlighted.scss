@@ -4,7 +4,7 @@
     $highlighted-padding-top: 0,
     $text-font-weight: false,
 ){
-    & > .highlighted{
+   .highlighted{
         margin-bottom: $highlighted-margin-bottom;
         padding-top: $highlighted-padding-top;
         @extend .f--font-#{$text-font} !optional;
@@ -17,7 +17,7 @@
 @mixin block-highlighted-modifier(
     $text-color
 ) {
-    .highlighted{
+   .highlighted{
         color: $text-color;
     }
 }

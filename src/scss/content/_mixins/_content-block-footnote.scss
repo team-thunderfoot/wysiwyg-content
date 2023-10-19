@@ -3,7 +3,7 @@
     $footnote-margin-bottom: $measure * 2,
     $text-font-weight: false,
 ){
-    & > .footnote{
+    .footnote{
         margin-bottom: $footnote-margin-bottom;
         @extend .f--font-#{$text-font} !optional;
         @if $text-font-weight {
