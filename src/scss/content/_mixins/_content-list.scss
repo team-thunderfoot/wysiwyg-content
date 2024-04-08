@@ -11,8 +11,8 @@
   $third-level-artwork-top: false,
   $text-font-weight: false,
 ) {
-  ul,
-  ol {
+  ul:not([class]),
+  ol:not([class]) {
     list-style: none;
     margin-bottom: $lists-margin-bottom; //* list margin
     li {
@@ -23,7 +23,7 @@
       }
     }
   }
-  ul {
+  ul:not([class]) {
     > li {
       position: relative;
       padding-left: calc(#{$measure*2} + #{$first-level-artwork-width}); //* space between artwork and text + artwork width
@@ -75,7 +75,7 @@
       }
     }
   }
-  ol {
+  ol:not([class]) {
     counter-reset: item;
     > li{
       position: relative;
@@ -137,13 +137,13 @@
   $third-level-artwork-border-width: false,
   $third-level-artwork-border-color: false,
 ) {
-  ul,
-  ol {
+  ul:not([class]),
+  ol:not([class]) {
     li {
       color: $text-color;
     }
   }
-  ul {
+  ul:not([class]) {
     > li {
       &:before {
         @if $first-level-artwork-image{
@@ -213,7 +213,7 @@
       }
     }
   }
-  ol {
+  ol:not([class]) {
     > li {
       &:before {
         color: $number-color;

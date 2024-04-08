@@ -11,24 +11,23 @@
     $body-rows-font-weight: false,
     $caption-font-weight: false,
 ){
-    .wp-block-table{
+    .wp-block-table,
+    table {
         margin-bottom: $table-margin-bottom;
-        table,
-        table.wp-block-table {
-            width: 100%;
-            text-align: left;
-            margin: 0;
-            border: none;
-            padding: 0px;
-        }
-        table thead,
-        table tfoot,
-        table.wp-block-table thead,
-        table.wp-block-table tfoot {
+        width: 100%;
+        text-align: left;
+        margin: 0;
+        border: none;
+        padding: 0px;
+        border-collapse: collapse;
+        thead,
+        tfoot,
+        thead,
+        tfoot {
             border: none;
             border: none;
         }
-        table thead tr { //* first row
+        thead tr { //* first row
             th {
                 padding: $header-cells-padding;
                 @extend .f--font-#{$header-font} !optional;
@@ -37,8 +36,8 @@
                 }
             }
         }
-        table td,
-        table.wp-block-table td { //* all rows
+        td,
+        td { //* all rows
             @extend .f--font-#{$body-rows-font} !optional;
             @if $body-rows-font-weight {
                 font-weight: $body-rows-font-weight;
@@ -77,25 +76,26 @@
     $caption-color
 ){
 
-    .wp-block-table{
-        table thead tr {
+    .wp-block-table,
+    table {
+        thead tr {
             background: $header-background;
             th {
                 color: $header-text-color;
                 border: $header-border-width solid $header-border-color;
             }
         }
-        table tbody tr {
+        tbody tr {
             background: $even-rows-background;
             td{
                 color: $body-rows-text-color;
             }
         }
-        table tbody tr:nth-child(odd) {
+        tbody tr:nth-child(odd) {
             background: $odd-rows-background;
         }
-        table td,
-        table.wp-block-table td {
+        td,
+        td {
             border: $body-rows-border-width solid $body-rows-border-color;
         }
         figcaption{
