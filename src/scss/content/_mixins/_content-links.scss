@@ -1,7 +1,8 @@
 @mixin links(
     $link-class
 ){
-    a:not([class]) {
+    a:not([class]),
+    a[class^='wp-'] {
         @extend .#{$link-class} !optional;
     }
 }
@@ -9,7 +10,8 @@
 @mixin links-modifier(
     $link-class-modifier
 ) {
-    a:not([class]) {
+    a:not([class]),
+    a[class^='wp-'] {
         @extend .#{$link-class-modifier} !optional;
     }
 }

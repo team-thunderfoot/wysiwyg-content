@@ -12,7 +12,9 @@
   $text-font-weight: false,
 ) {
   ul:not([class]),
-  ol:not([class]) {
+  ol:not([class]),
+  ul[class^='wp-'],
+  ol[class^='wp-'] {
     list-style: none;
     margin-bottom: $lists-margin-bottom; //* list margin
     li {
@@ -23,7 +25,8 @@
       }
     }
   }
-  ul:not([class]) {
+  ul:not([class]),
+  ul[class^='wp-'] {
     > li {
       position: relative;
       padding-left: calc(#{$measure*2} + #{$first-level-artwork-width}); //* space between artwork and text + artwork width
@@ -75,7 +78,8 @@
       }
     }
   }
-  ol:not([class]) {
+  ol:not([class]),
+  ol[class^='wp-'] {
     counter-reset: item;
     > li{
       position: relative;
@@ -138,12 +142,15 @@
   $third-level-artwork-border-color: false,
 ) {
   ul:not([class]),
-  ol:not([class]) {
+  ol:not([class]),
+  ul[class^='wp-'],
+  ol[class^='wp-'] {
     li {
       color: $text-color;
     }
   }
-  ul:not([class]) {
+  ul:not([class]),
+  ul[class^='wp-'] {
     > li {
       &:before {
         @if $first-level-artwork-image{
@@ -213,7 +220,8 @@
       }
     }
   }
-  ol:not([class]) {
+  ol:not([class]),
+  ol[class^='wp-'] {
     > li {
       &:before {
         color: $number-color;
